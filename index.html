@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>The Black Basket</title><meta name="description" content="Buy Black family grocery guide: everyday groceries and toiletries matched to Black-owned brands, plus Black-owned grocers near you."><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset="utf-8"><title>Black Groceries</title><meta name="description" content="Buy Black family grocery guide: everyday groceries and toiletries matched to Black-owned brands, plus Black-owned grocers near you."><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
@@ -306,6 +306,13 @@ footer ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}
   .stats strong{font-size:28px}
   .price{max-width:60%}
 }
+@media (max-width: 360px){
+  .top .wrap{gap:8px}
+  .brand{gap:8px}
+  .brand b{font-size:16px}
+  .brand-mark{width:30px;height:30px;font-size:13px}
+  nav.links a.sheet{padding:8px 10px;font-size:13px}
+}
 @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important;transition:none!important}}
 html{scroll-behavior:smooth}
 </style>
@@ -313,7 +320,7 @@ html{scroll-behavior:smooth}
 <div class="kente" aria-hidden="true"></div>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top"><span class="brand-mark">BB</span><b>The Black Basket</b></a>
+    <a class="brand" href="#top"><span class="brand-mark">BG</span><b>Black Groceries</b></a>
     <nav class="links" aria-label="Sections">
       <a href="#find">Find a grocer</a>
       <a href="#list">The list</a>
@@ -501,7 +508,7 @@ html{scroll-behavior:smooth}
 <footer>
   <div class="wrap">
     <div>
-      <h5>The Black Basket</h5>
+      <h5>Black Groceries</h5>
       <p>Put together for family and friends by Morris L. Smith Jr., Hampton Roads, Virginia. October 2026.</p>
       <p>Prices are approximate and change by store and ZIP code. Ownership can change too; we flag what we know. Spot something wrong or know a Black-owned grocer we missed? Tell Morris and we'll add it.</p>
       <p><a href="https://docs.google.com/spreadsheets/d/11n7pggpiMnxoAxB0bzqWIU3lyP5N-ToecdBUVjLPR2k/edit?usp=sharing" target="_blank" rel="noopener">Open the full list as a Google Sheet</a></p>
@@ -696,7 +703,7 @@ html{scroll-behavior:smooth}
     var lines=D.items.filter(function(it){return mine[it.n];}).map(function(it){
       return '[ ] '+it.item+': '+it.brands.filter(function(b){return b.status==='ok';}).map(function(b){return b.name;}).join(' or ');
     });
-    var text = lines.length ? 'My Black Basket list\n'+lines.join('\n') : 'My Black Basket list is empty. Check "My list" on a few items first.';
+    var text = lines.length ? 'My Black Groceries list\n'+lines.join('\n') : 'My Black Groceries list is empty. Check "My list" on a few items first.';
     var box=document.getElementById('copyBox'), btn=this;
     box.value=text; box.hidden=false;
     var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy my list';},1600);};
