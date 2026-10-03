@@ -1,0 +1,719 @@
+<!doctype html><html><head><meta charset="utf-8"><title>The Black Basket</title><meta name="description" content="Buy Black family grocery guide: everyday groceries and toiletries matched to Black-owned brands, plus Black-owned grocers near you."><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: white page, kente-stripe band, receipt-style rule card in the hero, shelf-tag cards for items. Single light theme by design. */
+:root{
+  color-scheme: light;
+  --bg:#FFFFFF;
+  --ink:#121815;
+  --muted:#58635C;
+  --line:#E2E9E4;
+  --green:#1E7B3E;
+  --green-deep:#145A2C;
+  --green-soft:#EAF5EE;
+  --gold:#F2A900;
+  --gold-soft:#FFF6DC;
+  --red:#C8102E;
+  --red-soft:#FCEBEE;
+  --gray-soft:#F1F3F2;
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--green-deep)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,label:focus-within{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1140px;margin:0 auto;padding-inline:20px}
+.kente{height:12px;background:
+  repeating-linear-gradient(90deg,var(--red) 0 34px,var(--gold) 34px 46px,var(--green) 46px 92px,var(--ink) 92px 100px,var(--gold) 100px 112px,var(--green) 112px 120px)}
+.kente.thin{height:6px}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand-mark{width:34px;height:34px;border-radius:9px;background:var(--green);display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:800;font-size:15px;position:relative;overflow:hidden}
+.brand-mark::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--red) 0 33%,var(--gold) 33% 66%,var(--ink) 66%)}
+.brand b{font-family:var(--display);font-size:20px;font-weight:800;letter-spacing:-.01em}
+nav.links{display:flex;gap:4px;flex-wrap:wrap}
+nav.links a{font-weight:600;font-size:14px;text-decoration:none;color:var(--ink);padding:7px 11px;border-radius:999px}
+nav.links a:hover{background:var(--green-soft);color:var(--green-deep)}
+nav.links a.sheet{background:var(--ink);color:#fff}
+nav.links a.sheet:hover{background:var(--green)}
+
+/* hero */
+.hero{padding-block:48px 36px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:40px;align-items:start}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4vw,72px);line-height:.98;letter-spacing:-.03em;margin:12px 0 18px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--green);position:relative;white-space:nowrap}
+h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.14em;background:var(--gold);z-index:-1;border-radius:3px}
+.lede{font-size:19px;color:var(--muted);max-width:56ch;margin:0 0 24px}
+.stats{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0 0 26px;padding:0;list-style:none}
+.stats li{display:flex;flex-direction:column}
+.stats strong{font-family:var(--display);font-size:34px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.stats span{font-size:13px;color:var(--muted);font-weight:500}
+.stats li:nth-child(1) strong{color:var(--green)}
+.stats li:nth-child(2) strong{color:var(--gold);text-shadow:0 0 0 #000}
+.stats li:nth-child(3) strong{color:var(--ink)}
+.stats li:nth-child(4) strong{color:var(--red)}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--body);padding:13px 18px;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--green);border-color:var(--green)}
+.btn.ghost{background:#fff;color:var(--ink)}
+.btn.ghost:hover{background:var(--green-soft);border-color:var(--green);color:var(--green-deep)}
+.btn.green{background:var(--green);border-color:var(--green)}
+.btn.green:hover{background:var(--green-deep);border-color:var(--green-deep)}
+
+/* receipt */
+.receipt{background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 18px 40px -22px rgba(18,24,21,.35);font-family:var(--mono);font-size:14px;padding:22px 22px 18px;position:relative;transform:rotate(1.2deg)}
+.receipt::before,.receipt::after{content:"";position:absolute;left:0;right:0;height:10px;background:radial-gradient(circle at 6px -2px,transparent 6px,#fff 6.5px) 0 0/12px 10px repeat-x}
+.receipt::after{bottom:-9px}
+.receipt::before{top:-9px;transform:scaleY(-1)}
+.receipt h2{font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-align:center;margin:0 0 4px}
+.receipt .sub{text-align:center;color:var(--muted);font-size:12px;margin-bottom:14px}
+.receipt ol{list-style:none;margin:0;padding:0;counter-reset:r}
+.receipt li{counter-increment:r;display:grid;grid-template-columns:28px 1fr;gap:6px;padding:9px 0;border-top:1px dashed #C9D3CD}
+.receipt li::before{content:counter(r,decimal-leading-zero);color:var(--green);font-weight:600}
+.receipt li b{font-weight:600;color:var(--ink)}
+.receipt li span{display:block;color:var(--muted);font-size:12.5px;font-family:var(--body)}
+.receipt .total{display:flex;justify-content:space-between;border-top:2px solid var(--ink);margin-top:6px;padding-top:10px;font-weight:600}
+.receipt .total em{font-style:normal;color:var(--red)}
+.receipt .thanks{text-align:center;color:var(--muted);font-size:12px;margin-top:10px}
+
+
+/* sections */
+section.block{padding-block:56px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+h2.sec{font-family:var(--display);font-weight:800;font-size:clamp(30px,4vw,44px);letter-spacing:-.02em;line-height:1.02;margin:6px 0 0;text-wrap:balance}
+.sec-head p{margin:8px 0 0;color:var(--muted);max-width:60ch}
+
+/* finder */
+#find{background:var(--green-soft)}
+.finder{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;min-width:0}
+.panel h3{font-family:var(--display);font-size:22px;font-weight:700;margin:0 0 4px}
+.panel .hint{color:var(--muted);font-size:14px;margin:0 0 14px}
+.search-row{display:flex;gap:8px;flex-wrap:wrap}
+.search-row input{flex:1 1 220px;min-width:0;font:500 17px var(--body);padding:13px 16px;border:2px solid var(--ink);border-radius:12px;background:#fff;color:var(--ink)}
+.search-row input::placeholder{color:#8A958E}
+.go-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.go{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff}
+.go:hover{border-color:var(--green);background:var(--green-soft)}
+.go b{font-weight:700;font-size:15px}
+.go span{font-size:13px;color:var(--muted)}
+.go.primary{background:var(--green);border-color:var(--green);color:#fff}
+.go.primary span{color:#D9EEDF}
+.go.primary:hover{background:var(--green-deep)}
+.status{font-size:14px;margin:14px 0 10px;font-weight:600}
+.status.none{color:var(--red)}
+.status.hit{color:var(--green-deep)}
+.grocers{display:flex;flex-direction:column;gap:10px;max-height:520px;overflow:auto;padding-right:4px}
+.grocer{border:1px solid var(--line);border-left:5px solid var(--green);border-radius:10px;padding:12px 14px;background:#fff}
+.grocer.home{border-left-color:var(--gold);background:var(--gold-soft)}
+.grocer h4{margin:0;font-size:16px;font-weight:700}
+.grocer .where{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:2px 0 6px}
+.grocer p{margin:0;font-size:14px}
+.grocer .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;font-size:14px;font-weight:600}
+.dirs{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
+.dirs a{font-weight:700}
+.dirs span{color:var(--muted);font-size:14px}
+
+/* farms */
+#farms{background:#fff}
+.farm{display:grid;grid-template-columns:1.1fr 1fr;gap:22px;align-items:start}
+.farm-card{border:2px solid var(--green);border-radius:var(--radius);padding:22px;background:linear-gradient(180deg,var(--green-soft),#fff 70%);min-width:0}
+.farm-card h3{font-family:var(--display);font-size:26px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em}
+.farm-card p{margin:0 0 14px;color:var(--muted)}
+.farm-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 16px;padding:0;list-style:none}
+@media (max-width:480px){.farm-stats{grid-template-columns:1fr}}
+.farm-stats li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.farm-stats strong{display:block;font-family:var(--display);font-size:22px;color:var(--green);line-height:1}
+.farm-stats span{font-size:13px;color:var(--muted)}
+.farm-steps{margin:0;padding-left:20px;display:grid;gap:8px}
+.farm-steps li::marker{color:var(--red);font-weight:700}
+.farm-links{display:grid;gap:10px}
+.go.farmgo{border-left:5px solid var(--green)}
+.go.farmgo.gold{border-left-color:var(--gold)}
+.go.farmgo.red{border-left-color:var(--red)}
+@media (max-width: 860px){.farm{grid-template-columns:1fr}}
+
+/* list controls */
+.controls{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-bottom:12px}
+.controls input{font:500 16px var(--body);padding:13px 16px;border:2px solid var(--ink);border-radius:12px;width:100%;min-width:0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.tab{font:600 14px var(--body);padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--ink);border-color:var(--gold);color:#fff;box-shadow:0 0 0 2px var(--gold)}
+.tab .g{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.tab.grp{font-weight:700}
+.tabs .sep{flex-basis:100%;height:0}
+.chip .srch{font-family:var(--mono);font-size:10.5px;font-weight:600;color:var(--muted);margin-left:5px;letter-spacing:.03em}
+.tab .n{font-family:var(--mono);font-size:12px;opacity:.7;margin-left:4px}
+.row2{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.toggle{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;cursor:pointer}
+.toggle input{width:18px;height:18px;accent-color:var(--green)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.legend i,.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:1px;flex:none}
+.d-ok{background:var(--green)}.d-changed{background:var(--gold)}.d-not{background:var(--red)}.d-verify{background:#9AA59E}
+.count{font-family:var(--mono);font-size:13px;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.tag{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:16px 16px 14px;display:flex;flex-direction:column;gap:10px;min-width:0;position:relative}
+.tag.on{border-color:var(--green);box-shadow:0 0 0 2px var(--green) inset}
+.tag-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.aisle{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:6px}
+.s-grocery{background:var(--green-soft);color:var(--green-deep)}
+.s-toiletries{background:var(--gold-soft);color:#7A5300}
+.s-household{background:var(--red-soft);color:#8E0C21}
+.mine{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer}
+.mine input{width:17px;height:17px;accent-color:var(--green)}
+.tag h3{font-family:var(--display);font-size:22px;font-weight:700;line-height:1.1;margin:0;letter-spacing:-.01em}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;font-size:14px;font-weight:600;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none}
+a.chip:hover{border-color:var(--green);background:var(--green-soft)}
+.chip.plain{color:var(--muted)}
+.meta{display:flex;gap:12px;align-items:flex-start;margin-top:auto}
+.price{flex:none;font-family:var(--mono);font-weight:600;font-size:13.5px;background:var(--gold-soft);border:1px solid #F3D88A;padding:6px 10px 6px 18px;border-radius:4px 8px 8px 4px;position:relative;max-width:55%}
+.price::before{content:"";position:absolute;left:6px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:#fff;border:1px solid #E5C25C}
+.wherebuy{font-size:13.5px;color:var(--muted);min-width:0}
+
+
+.note{font-size:13px;line-height:1.4;background:var(--gray-soft);border-radius:8px;padding:8px 10px;margin:0}
+.note.warn{background:var(--gold-soft)}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 10px;border:2px dashed var(--line);border-radius:var(--radius)}
+.mybar{position:sticky;bottom:0;z-index:15;background:var(--ink);color:#fff;border-radius:14px 14px 0 0;margin-top:22px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.mybar b{font-family:var(--display);font-size:18px}
+.mybar .btn{border-color:#fff;padding:10px 14px;font-size:14px}
+.mybar .btn.ghost{background:transparent;color:#fff}
+.mybar .btn.ghost:hover{background:rgba(255,255,255,.12)}
+#copyBox{width:100%;margin-top:8px;font:13px var(--mono);border-radius:8px;padding:8px}
+/* card parts (desktop: always open, opener is just a header) */
+.opener{all:unset;box-sizing:border-box;display:flex;flex-direction:column;gap:8px;min-width:0;flex:1;cursor:default}
+.opener .aisle{align-self:flex-start}
+.opener .sum,.opener .chev,.mine .plus,.dock,.sheet-panel,.scrim{display:none}
+.tag-top{align-items:flex-start}
+.body{display:flex;flex-direction:column;gap:10px;flex:1}
+.mylab{min-width:0}
+
+/* heads up */
+#heads{background:#FAFBFA;border-block:1px solid var(--line)}
+.heads{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.hcard{background:#fff;border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:12px;padding:16px}
+.hcard.not{border-top-color:var(--red)}
+.hcard.verify{border-top-color:#9AA59E}
+.hcard h4{margin:0 0 4px;font-family:var(--display);font-size:19px}
+.hcard .lab{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hcard p{margin:6px 0 0;font-size:14.5px}
+.gaps{margin-top:22px;padding:18px 20px;border-radius:12px;background:var(--green-soft);font-size:15.5px}
+
+/* how */
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;counter-reset:h}
+.how div{border-top:3px solid var(--ink);padding-top:14px}
+.how div::before{counter-increment:h;content:"Step " counter(h);font-family:var(--mono);font-size:12px;font-weight:600;color:var(--red);letter-spacing:.06em;text-transform:uppercase}
+.how h4{font-family:var(--display);font-size:20px;margin:6px 0 6px}
+.how p{margin:0;color:var(--muted);font-size:15px}
+
+footer{padding-block:40px 30px;border-top:1px solid var(--line)}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+footer p{margin:0 0 8px;color:var(--muted);font-size:14px}
+footer h5{font-family:var(--display);font-size:20px;margin:0 0 8px}
+footer ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}
+
+@media (max-width: 860px){
+  .hero .wrap,.finder,footer .wrap{grid-template-columns:1fr}
+  .receipt{transform:none}
+  nav.links a:not(.sheet){display:none}
+}
+@media (max-width: 640px){
+  /* one-hand list: compact rows that open on tap, controls docked at the bottom */
+  #list .controls{display:none}
+  #list .row2{margin-bottom:10px}
+  .grid{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .tag{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:0;gap:0}
+  .tag:last-child{border-bottom:0}
+  .tag.on{box-shadow:inset 4px 0 0 var(--green)}
+  .tag-top{align-items:center;gap:0}
+  .opener{cursor:pointer;display:grid;grid-template-columns:1fr auto;grid-template-areas:"name chev" "sum chev";column-gap:10px;row-gap:2px;padding:12px 6px 12px 14px;min-height:64px;align-content:center;-webkit-tap-highlight-color:transparent}
+  .opener:active{background:var(--gray-soft)}
+  .opener .aisle{display:none}
+  .opener h3{grid-area:name;font-size:18px;line-height:1.2}
+  .opener .sum{grid-area:sum;display:block;font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .opener .sum i{font-style:normal;opacity:.5}
+  .opener .chev{grid-area:chev;align-self:center;display:block;width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-3px) rotate(45deg);transition:transform .15s}
+  .tag.open .opener .chev{transform:translateY(3px) rotate(-135deg)}
+  .mine{position:relative;flex:none;width:56px;height:64px;display:grid;place-items:center;border-left:1px solid var(--line)}
+  .mine .mtxt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .mine .plus{display:block;width:36px;height:36px;border-radius:50%;border:2px solid var(--green);position:relative;pointer-events:none}
+  .mine .plus::before,.mine .plus::after{content:"";position:absolute;left:50%;top:50%;background:var(--green);border-radius:2px}
+  .mine .plus::before{width:16px;height:2.5px;margin:-1.25px 0 0 -8px}
+  .mine .plus::after{width:2.5px;height:16px;margin:-8px 0 0 -1.25px}
+  .mine input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:1}
+  .mine input:checked + .mtxt + .plus{background:var(--green)}
+  .mine input:checked + .mtxt + .plus::before{background:#fff;width:9px;height:2.5px;margin:1px 0 0 -8px;transform:rotate(45deg)}
+  .mine input:checked + .mtxt + .plus::after{background:#fff;width:2.5px;height:16px;margin:-9px 0 0 2px;transform:rotate(45deg)}
+  .mine input:focus-visible + .mtxt + .plus{outline:3px solid var(--gold);outline-offset:2px}
+  .body{display:none;padding:2px 14px 16px}
+  .tag.open .body{display:flex}
+  .chip{font-size:15px;padding:9px 13px;min-height:42px}
+  .chips{gap:8px}
+  .meta{flex-direction:column;gap:6px}
+  .price{max-width:none}
+  /* bottom dock */
+  .mybar{display:grid;grid-template-columns:1fr auto;padding:10px 10px calc(10px + env(safe-area-inset-bottom,0px));gap:8px;border-radius:16px 16px 0 0;margin-inline:-20px;box-shadow:0 -6px 20px rgba(18,24,21,.18)}
+  .mybar > div:last-of-type{gap:6px!important;flex-wrap:nowrap!important}
+  .dock{display:grid;grid-template-columns:1fr auto;gap:8px;grid-column:1/-1}
+  .dock-q input{width:100%;font:500 16px var(--body);padding:0 14px;height:48px;border:0;border-radius:12px;background:#fff;color:var(--ink)}
+  .aisle-btn{all:unset;box-sizing:border-box;height:48px;padding:0 14px;border-radius:12px;background:var(--gold);color:var(--ink);display:flex;flex-direction:column;justify-content:center;max-width:42vw;cursor:pointer}
+  .aisle-btn .lbl{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;line-height:1}
+  .aisle-btn b{font-family:var(--body);font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.25}
+  .aisle-btn:focus-visible{outline:3px solid #fff}
+  .mylab{display:none}
+  .mybar > div:last-of-type{grid-column:1/-1}
+  .mybar > div:last-of-type .btn{flex:1;padding:0 8px;height:44px;font-size:14px;white-space:nowrap}
+  #clearMine{flex:0 0 auto!important;padding:0 14px!important}
+  #copyBox{grid-column:1/-1;margin-top:0}
+  /* aisle sheet */
+  .scrim{display:block;position:fixed;inset:0;background:rgba(18,24,21,.45);z-index:40}
+  .scrim[hidden],.sheet-panel[hidden]{display:none}
+  .sheet-panel{display:block;position:fixed;left:0;right:0;bottom:0;z-index:41;background:#fff;border-radius:20px 20px 0 0;max-height:88vh;overflow-y:auto;padding:8px 16px calc(16px + env(safe-area-inset-bottom,0px));box-shadow:0 -10px 30px rgba(0,0,0,.2)}
+  .grab{width:44px;height:5px;border-radius:3px;background:var(--line);margin:4px auto 10px}
+  .sheet-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;position:sticky;top:-8px;background:#fff;padding-top:4px;z-index:1}
+  .sheet-head b{font-family:var(--display);font-size:22px}
+  .sheet-head .btn{height:44px;padding:0 18px}
+  .sheet-panel .tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:14px}
+  .sheet-panel .tab{font-size:14px;padding:0 10px;height:44px;display:flex;align-items:center;border-radius:12px;text-align:left;min-width:0;white-space:normal;line-height:1.15}
+  .sheet-panel .tab .g{flex:none}
+  .sheet-panel .tab .n{margin-left:auto;padding-left:6px}
+  .sheet-panel .tabs .sep{display:block;grid-column:1/-1;height:4px}
+  .sheet-panel .toggle{min-height:44px;margin-bottom:10px;font-size:15px}
+  .sheet-panel .toggle input{width:22px;height:22px}
+  .sheet-panel .legend{font-size:13px;gap:8px 14px}
+  body.locked{overflow:hidden}
+}
+@media (max-width: 480px){
+  .top .wrap{flex-wrap:nowrap;padding-block:8px}
+  .hide-s{display:none}
+  .brand b{font-size:18px;white-space:nowrap}
+  .brand-mark{flex:none}
+  nav.links a.sheet{padding:9px 13px;white-space:nowrap}
+  .go-links{grid-template-columns:1fr}
+  .controls{grid-template-columns:1fr}
+  .stats strong{font-size:28px}
+  .price{max-width:60%}
+}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important;transition:none!important}}
+html{scroll-behavior:smooth}
+</style>
+
+<div class="kente" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="brand-mark">BB</span><b>The Black Basket</b></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#find">Find a grocer</a>
+      <a href="#list">The list</a>
+      <a href="#farms">Farms</a>
+      <a href="#heads">Heads up</a>
+      <a class="sheet" href="https://docs.google.com/spreadsheets/d/11n7pggpiMnxoAxB0bzqWIU3lyP5N-ToecdBUVjLPR2k/edit?usp=sharing" target="_blank" rel="noopener"><span class="hide-s">Open the </span>Google Sheet</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Family grocery guide · Fall 2026</div>
+        <h1>Fill the cart. <em>Build the block.</em></h1>
+        <p class="lede">Everyday groceries and toiletries, matched to the Black-owned brands that make them, plus where to find a Black-owned grocer near you, wherever you live in the U.S.</p>
+        <ul class="stats">
+          <li><strong>103</strong><span>everyday items</span></li>
+          <li><strong>99</strong><span>Black brands</span></li>
+          <li><strong>17</strong><span>Black-owned grocers</span></li>
+          <li><strong>50</strong><span>states you can search</span></li>
+        </ul>
+        <div class="cta">
+          <a class="btn green" href="#find">Find a grocer near me</a>
+          <a class="btn ghost" href="#list">Browse the list</a>
+        </div>
+      </div>
+      <aside class="receipt" aria-label="The shopping rule">
+        <h2>THE RULE</h2>
+        <div class="sub">Follow it in order, every trip</div>
+        <ol>
+          <li><div><b>Pick the Black-owned brand</b><span>Use the list below for every item on your run.</span></div></li>
+          <li><div><b>Buy it at a Black-owned grocer</b><span>Black brand plus Black grocer keeps the dollar circulating twice.</span></div></li>
+          <li><div><b>Not on the shelf? Ask for it</b><span>Ask the manager to special-order. Every ask tells them we want it.</span></div></li>
+          <li><div><b>Still can't get it? Buy direct</b><span>Every brand's website is one tap away.</span></div></li>
+        </ol>
+        <div class="total"><span>SPENT WITH OUR PEOPLE</span><em>100%</em></div>
+        <div class="thanks">Thank you for shopping with your people.</div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block" id="find">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Anywhere in the U.S.</div>
+          <h2 class="sec">Find a Black-owned grocer near you</h2>
+          <p>Type your city, state or ZIP. We'll show any verified Black-owned grocers in your state and open live searches for your exact area.</p>
+        </div>
+      </div>
+      <div class="finder">
+        <div class="panel">
+          <h3>Where are you shopping?</h3>
+          <p class="hint">Try "Norfolk, VA", "Atlanta", "Texas" or a ZIP like 23523.</p>
+          <form class="search-row" id="findForm" autocomplete="off">
+            <input id="loc" type="search" placeholder="City, state or ZIP" aria-label="City, state or ZIP">
+            <button class="btn" type="submit">Search</button>
+          </form>
+          <div class="go-links">
+            <a class="go primary" id="gmaps" href="#" target="_blank" rel="noopener"><b>Google Maps</b><span id="gmapsSub">Black-owned grocery stores near me</span></a>
+            <a class="go" id="yelp" href="#" target="_blank" rel="noopener"><b>Yelp</b><span>Black-owned grocery stores</span></a>
+            <a class="go" id="farm" href="#" target="_blank" rel="noopener"><b>Black farmers markets</b><span>Eggs, produce and meat</span></a>
+            <a class="go" href="https://www.officialblackwallstreet.com" target="_blank" rel="noopener"><b>Official Black Wall Street</b><span>Directory and app</span></a>
+          </div>
+          <ul class="dirs">
+            <li><a href="https://www.byblack.us" target="_blank" rel="noopener">ByBlack</a> <span>U.S. Black Chambers business directory</span></li>
+            <li><a href="https://shop.buyblack.org" target="_blank" rel="noopener">BuyBlack.org</a> <span>Marketplace and directory</span></li>
+            <li><b>Hampton Roads family:</b> <span>Get the Hampton Roads Greenbook app for local Black-owned businesses.</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Verified Black-owned grocers</h3>
+          <div class="status" id="findStatus" aria-live="polite"></div>
+          <div class="grocers" id="grocerList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="farms">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Produce, vegetables and meat</div>
+          <h2 class="sec">Get your fresh food from Black farmers</h2>
+          <p>There's no national Black-owned brand of fresh produce, meat or eggs on grocery shelves yet. So go straight to the farm. The Black Farmers Index is our guide for this part of the list.</p>
+        </div>
+      </div>
+      <div class="farm">
+        <div class="farm-card">
+          <h3>Black Farmers Index</h3>
+          <p>A free nonprofit directory of Black farmers across the country, from vegetable growers and cattle ranchers to beekeepers.</p>
+          <ul class="farm-stats">
+            <li><strong>300+</strong><span>farms raising meat</span></li>
+            <li><strong>300+</strong><span>organic, natural or regenerative farms</span></li>
+            <li><strong>12</strong><span>regions, every state</span></li>
+          </ul>
+          <ol class="farm-steps">
+            <li>Open the Index and pick your region.</li>
+            <li>Choose your state and browse the farms listed there.</li>
+            <li>Contact the farm about pickup, delivery, CSA boxes or the markets where they sell.</li>
+          </ol>
+        </div>
+        <div class="farm-links">
+          <a class="go primary" href="https://blackfarmersindex.com" target="_blank" rel="noopener"><b>Open the Black Farmers Index</b><span>Produce, vegetables, meat and eggs in every state</span></a>
+          <a class="go farmgo" href="https://blackfarmersindex.com/reg-3-virginia-%2B-w-va" target="_blank" rel="noopener"><b>Virginia &amp; West Virginia farms</b><span>Start here, Hampton Roads family</span></a>
+          <a class="go farmgo gold" href="https://blackfarmersindex.com/f/96-black-farmers-offering-locally-raised-meat" target="_blank" rel="noopener"><b>96 Black farmers selling meat</b><span>Beef, poultry, pork and lamb raised locally</span></a>
+          <a class="go farmgo red" id="farm2" href="https://www.google.com/maps/search/?api=1&amp;query=Black%20farmers%20market%20near%20me" target="_blank" rel="noopener"><b>Black farmers markets near you</b><span>Uses the location you typed above</span></a>
+          <p class="hint" style="margin:4px 0 0">In Hampton Roads, the Mid-Atlantic Black Farmers Market sets up at E. Palmer Supermarket in Berkley, Norfolk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="list">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">The list</div>
+          <h2 class="sec">What to buy, and who to buy it from</h2>
+          <p>Tap an item to see its Black brands, then tap a brand to visit its website. Add what you need to My list and copy it before you head out.</p>
+        </div>
+      </div>
+      <div class="controls">
+        <input id="q" type="search" placeholder="Search an item or brand, like grits, coffee or deodorant" aria-label="Search items or brands">
+        <label class="toggle"><input type="checkbox" id="pure"> Only fully Black-owned</label>
+      </div>
+      <div class="tabs" id="tabs" role="group" aria-label="Filter by category"></div>
+      <div class="row2">
+        <div class="legend"><span><i class="d-ok"></i>Black-owned</span><span><i class="d-changed"></i>Black-founded, now corporate</span><span><i class="d-not"></i>Not Black-owned</span><span><i class="d-verify"></i>Verify</span><span><b style="font-family:var(--mono);font-size:11px">SEARCH</b> no official site, opens a web search</span></div>
+        <span class="count" id="count"></span>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="mybar" id="mybar">
+        <div class="dock" id="dock">
+          <div class="dock-q" id="dockQ"></div>
+          <button type="button" class="aisle-btn" id="aisleBtn" aria-haspopup="dialog" aria-controls="sheet"><span class="lbl">Aisle</span><b id="aisleNow">All</b></button>
+        </div>
+        <div class="mylab"><b id="myCount">0 items</b> on my list</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn ghost" type="button" id="showMine">Show my list</button>
+          <button class="btn ghost" type="button" id="clearMine">Clear</button>
+          <button class="btn" type="button" id="copyMine" style="background:var(--gold);border-color:var(--gold);color:var(--ink)">Copy my list</button>
+        </div>
+        <textarea id="copyBox" rows="5" hidden aria-label="Your list as text"></textarea>
+      </div>
+    </div>
+  </section>
+  <div class="scrim" id="scrim" hidden></div>
+  <div class="sheet-panel" id="sheet" role="dialog" aria-modal="true" aria-label="Pick an aisle" hidden>
+    <div class="grab"></div>
+    <div class="sheet-head"><b>Pick an aisle</b><button type="button" class="btn" id="sheetDone">Done</button></div>
+    <div id="sheetBody"></div>
+  </div>
+
+  <section class="block" id="heads">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Heads up</div>
+          <h2 class="sec">Brands that changed hands</h2>
+          <p>Some names you grew up with were started by us and later sold. They're marked on the list so you can decide for yourself.</p>
+        </div>
+      </div>
+      <div class="heads" id="headsGrid"></div>
+      <div class="gaps"><b>Produce, vegetables, meat and eggs:</b> there's no national Black-owned brand on grocery shelves yet. Use the <a href="https://blackfarmersindex.com" target="_blank" rel="noopener">Black Farmers Index</a> to buy straight from Black farms in your state, or shop a Black-owned grocer. In Hampton Roads, the Mid-Atlantic Black Farmers Market sets up at E. Palmer Supermarket in Berkley.</div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="eyebrow">How to use this</div><h2 class="sec">Make it a habit, not a hashtag</h2></div></div>
+      <div class="how">
+        <div><h4>Swap one aisle at a time</h4><p>Start with coffee, snacks or soap. Next trip, add another aisle. It adds up fast.</p></div>
+        <div><h4>Ask at the register</h4><p>If your store doesn't carry a brand, ask the manager to stock it. Stores track requests.</p></div>
+        <div><h4>Set up auto-delivery</h4><p>Detergent, toilet paper and coffee all ship on subscription straight from the brands.</p></div>
+        <div><h4>Pass it on</h4><p>Send this page to one more person. That's how a family list turns into a movement.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h5>The Black Basket</h5>
+      <p>Put together for family and friends by Morris L. Smith Jr., Hampton Roads, Virginia. October 2026.</p>
+      <p>Prices are approximate and change by store and ZIP code. Ownership can change too; we flag what we know. Spot something wrong or know a Black-owned grocer we missed? Tell Morris and we'll add it.</p>
+      <p><a href="https://docs.google.com/spreadsheets/d/11n7pggpiMnxoAxB0bzqWIU3lyP5N-ToecdBUVjLPR2k/edit?usp=sharing" target="_blank" rel="noopener">Open the full list as a Google Sheet</a></p>
+    </div>
+    <div>
+      <h5>Sources</h5>
+      <ul>
+        <li><a href="https://www.foodnetwork.com/how-to/packages/shopping/articles/black-owned-food-drink-businesses-brands" target="_blank" rel="noopener">Food Network: Black-owned food brands</a></li>
+        <li><a href="https://www.blackenterprise.com/black-owned-grocery-store-supermarket-food/" target="_blank" rel="noopener">Black Enterprise: Black-owned supermarkets</a></li>
+        <li><a href="https://www.wavy.com/news/local-news/norfolk/40000-in-grocery-gift-cards-given-out-in-norfolk-on-saturday/amp/" target="_blank" rel="noopener">WAVY: E. Palmer Supermarket</a></li>
+        <li><a href="https://www.whro.org/local-government/2026-08-07/260807-blkfarmer-saunders" target="_blank" rel="noopener">WHRO: Mid-Atlantic Black Farmers Market</a></li>
+        <li><a href="https://www.walmart.com/shop/bath-and-body-supporting-black-communities" target="_blank" rel="noopener">Walmart: Black-led bath and body</a></li>
+        <li><a href="https://blackfarmersindex.com" target="_blank" rel="noopener">Black Farmers Index</a></li>
+        <li>Brand websites and local news for each grocer</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<div class="kente thin" aria-hidden="true"></div>
+
+<script id="data" type="application/json">{"items": [{"n": 1, "item": "Pancake mix", "aisle": "Breakfast", "group": "grocery", "brands": [{"name": "Vicky Cakes", "url": "https://vickycakesonline.com", "search": false, "status": "ok", "note": ""}, {"name": "Ghetto Gastro", "url": "https://ghettogastro.com", "search": false, "status": "ok", "note": ""}, {"name": "Uncle P's", "url": "https://www.google.com/search?q=Uncle+P%27s+Master+P+rice+grits", "search": true, "status": "ok", "note": ""}], "price": "$4.99-$5.99", "where": "Online", "where_sheet": "Online; Target"}, {"n": 2, "item": "Waffle mix", "aisle": "Breakfast", "group": "grocery", "brands": [{"name": "ReMix Waffles", "url": "https://www.remixwaffles.com", "search": false, "status": "ok", "note": ""}, {"name": "Ghetto Gastro", "url": "https://ghettogastro.com", "search": false, "status": "ok", "note": ""}, {"name": "Vicky Cakes", "url": "https://vickycakesonline.com", "search": false, "status": "ok", "note": ""}], "price": "$5-$10", "where": "Online", "where_sheet": "Online; Target"}, {"n": 3, "item": "Syrup", "aisle": "Breakfast", "group": "grocery", "brands": [{"name": "Michele's Syrup", "url": "https://michelefoods.com", "search": false, "status": "ok", "note": ""}, {"name": "Ghetto Gastro", "url": "https://ghettogastro.com", "search": false, "status": "ok", "note": ""}], "price": "$8-$15", "where": "Major grocers; online", "where_sheet": "Major grocers; online"}, {"n": 4, "item": "Cereal", "aisle": "Breakfast", "group": "grocery", "brands": [{"name": "Choputa", "url": "https://hereheremarket.com/collections/choputa", "search": false, "status": "verify", "note": "Could not confirm Black ownership. Sold at Here Here Market."}], "price": "$3.99", "where": "Here Here Market; online", "where_sheet": "Here Here Market; online"}, {"n": 5, "item": "Granola", "aisle": "Breakfast", "group": "grocery", "brands": [{"name": "Oh-Mazing Granola", "url": "https://www.ohmazingfood.com", "search": false, "status": "ok", "note": ""}, {"name": "BKLYN Granola (It's NOLA)", "url": "https://www.brooklyngranola.nyc", "search": false, "status": "ok", "note": ""}], "price": "$7-$15", "where": "Specialty stores; online", "where_sheet": "Specialty stores; online"}, {"n": 6, "item": "Oatmeal & grits", "aisle": "Breakfast", "group": "grocery", "brands": [{"name": "Uncle P's", "url": "https://www.google.com/search?q=Uncle+P%27s+Master+P+rice+grits", "search": true, "status": "ok", "note": ""}], "price": "$3-$5", "where": "Grocers nationwide (check locally)", "where_sheet": "Grocers nationwide (check locally)"}, {"n": 7, "item": "Breakfast pastries", "aisle": "Breakfast", "group": "grocery", "brands": [{"name": "Ghetto Gastro", "url": "https://ghettogastro.com", "search": false, "status": "ok", "note": ""}], "price": "$5-$8", "where": "Online", "where_sheet": "Target; online"}, {"n": 8, "item": "Rice", "aisle": "Pantry", "group": "grocery", "brands": [{"name": "A Dozen Cousins", "url": "https://adozencousins.com", "search": false, "status": "ok", "note": ""}, {"name": "Yolélé Foods", "url": "https://yolelefoods.com", "search": false, "status": "ok", "note": ""}, {"name": "Uncle P's", "url": "https://www.google.com/search?q=Uncle+P%27s+Master+P+rice+grits", "search": true, "status": "ok", "note": ""}], "price": "$2.69 and up", "where": "Whole Foods; online", "where_sheet": "Whole Foods; Target; online"}, {"n": 9, "item": "Fonio (grain)", "aisle": "Pantry", "group": "grocery", "brands": [{"name": "Yolélé Foods", "url": "https://yolelefoods.com", "search": false, "status": "ok", "note": ""}], "price": "$7-$12", "where": "Whole Foods; online", "where_sheet": "Whole Foods; online"}, {"n": 10, "item": "Ready-to-eat seasoned beans", "aisle": "Pantry", "group": "grocery", "brands": [{"name": "A Dozen Cousins", "url": "https://adozencousins.com", "search": false, "status": "ok", "note": ""}], "price": "$2.79 (10 oz)", "where": "Kroger; Whole Foods", "where_sheet": "Kroger; Whole Foods; Target"}, {"n": 11, "item": "Jollof / African meal sauce", "aisle": "Pantry", "group": "grocery", "brands": [{"name": "Queen's Jollof", "url": "https://www.google.com/search?q=Queen%27s+Jollof+jollof+sauce", "search": true, "status": "ok", "note": ""}, {"name": "Kitchens of Africa", "url": "https://www.kitchensofafrica.com", "search": false, "status": "ok", "note": ""}], "price": "$12-$23", "where": "Walmart; online", "where_sheet": "Walmart; online"}, {"n": 12, "item": "Pasta sauce", "aisle": "Pantry", "group": "grocery", "brands": [{"name": "Yo Mama's Foods", "url": "https://yomamasfoods.com", "search": false, "status": "ok", "note": ""}], "price": "$18-$21 (multi-pack)", "where": "Amazon; online", "where_sheet": "Amazon; online"}, {"n": 13, "item": "Olive oil", "aisle": "Pantry", "group": "grocery", "brands": [{"name": "EXAU Olive Oil", "url": "https://exauoliveoil.com", "search": false, "status": "ok", "note": ""}], "price": "$43.75", "where": "Online", "where_sheet": "Online"}, {"n": 14, "item": "Honey", "aisle": "Pantry", "group": "grocery", "brands": [{"name": "Zach & Zoe Sweet Bee Farm", "url": "https://zachandzoe.co", "search": false, "status": "ok", "note": ""}], "price": "$10-$20", "where": "Specialty stores; online", "where_sheet": "Specialty stores; online"}, {"n": 15, "item": "Peanut butter", "aisle": "Pantry", "group": "grocery", "brands": [{"name": "Mumgry", "url": "https://mumgry.com", "search": false, "status": "ok", "note": ""}], "price": "$7.49", "where": "Walmart; online", "where_sheet": "Walmart; online"}, {"n": 16, "item": "Fruit spread / jam", "aisle": "Pantry", "group": "grocery", "brands": [{"name": "Kyvan", "url": "https://kyvan82.com", "search": false, "status": "ok", "note": ""}], "price": "$7.99", "where": "Online", "where_sheet": "Online"}, {"n": 17, "item": "Beans (canned)", "aisle": "Canned Goods", "group": "grocery", "brands": [{"name": "A Dozen Cousins", "url": "https://adozencousins.com", "search": false, "status": "ok", "note": ""}, {"name": "Goode Foods", "url": "https://www.goodefoods.com", "search": false, "status": "ok", "note": ""}, {"name": "Glory Foods", "url": "https://gloryfoods.com", "search": false, "status": "changed", "note": "Black-founded. Owned by McCall Farms since 2009."}], "price": "$1.49-$2.79", "where": "Kroger; Walmart; Whole Foods", "where_sheet": "Kroger; Walmart; Whole Foods; Target"}, {"n": 18, "item": "Pinto beans", "aisle": "Canned Goods", "group": "grocery", "brands": [{"name": "A Dozen Cousins", "url": "https://adozencousins.com", "search": false, "status": "ok", "note": ""}, {"name": "Glory Foods", "url": "https://gloryfoods.com", "search": false, "status": "changed", "note": "Black-founded. Owned by McCall Farms since 2009."}], "price": "$2.29-$2.79", "where": "Kroger; Whole Foods", "where_sheet": "Kroger; Whole Foods; Target"}, {"n": 19, "item": "Chickpeas", "aisle": "Canned Goods", "group": "grocery", "brands": [{"name": "Goode Foods", "url": "https://www.goodefoods.com", "search": false, "status": "ok", "note": ""}, {"name": "A Dozen Cousins", "url": "https://adozencousins.com", "search": false, "status": "ok", "note": ""}], "price": "$1.49-$2.69", "where": "Whole Foods", "where_sheet": "Whole Foods; Target"}, {"n": 20, "item": "Black-eyed peas", "aisle": "Canned Goods", "group": "grocery", "brands": [{"name": "Glory Foods", "url": "https://gloryfoods.com", "search": false, "status": "changed", "note": "Black-founded. Owned by McCall Farms since 2009."}], "price": "$1.79", "where": "Kroger", "where_sheet": "Kroger"}, {"n": 21, "item": "Canned greens", "aisle": "Canned Goods", "group": "grocery", "brands": [{"name": "Glory Foods", "url": "https://gloryfoods.com", "search": false, "status": "changed", "note": "Black-founded. Owned by McCall Farms since 2009."}], "price": "$2.39-$3.29", "where": "Kroger; Walmart", "where_sheet": "Kroger; Walmart"}, {"n": 22, "item": "Canned vegetables", "aisle": "Canned Goods", "group": "grocery", "brands": [{"name": "Goode Foods", "url": "https://www.goodefoods.com", "search": false, "status": "ok", "note": ""}, {"name": "Glory Foods", "url": "https://gloryfoods.com", "search": false, "status": "changed", "note": "Black-founded. Owned by McCall Farms since 2009."}], "price": "$1.79-$3.29", "where": "Kroger; Walmart", "where_sheet": "Kroger; Walmart"}, {"n": 23, "item": "Ketchup", "aisle": "Sauces & Condiments", "group": "grocery", "brands": [{"name": "Yo Mama's Foods", "url": "https://yomamasfoods.com", "search": false, "status": "ok", "note": ""}], "price": "$17.49 (2-pack)", "where": "Amazon", "where_sheet": "Amazon"}, {"n": 24, "item": "Hot sauce", "aisle": "Sauces & Condiments", "group": "grocery", "brands": [{"name": "Capital City Co.", "url": "https://www.capitalcity.com", "search": false, "status": "ok", "note": ""}, {"name": "EssieSpice", "url": "https://www.essiespice.com", "search": false, "status": "ok", "note": ""}, {"name": "STL Pure Heat", "url": "https://stlpureheat.com", "search": false, "status": "ok", "note": ""}, {"name": "Queen's Jollof", "url": "https://www.google.com/search?q=Queen%27s+Jollof+jollof+sauce", "search": true, "status": "ok", "note": ""}, {"name": "Kitchens of Africa", "url": "https://www.kitchensofafrica.com", "search": false, "status": "ok", "note": ""}, {"name": "Nicobi Foods", "url": "https://www.google.com/search?q=Nicobi+Foods+hot+sauce", "search": true, "status": "ok", "note": ""}], "price": "$5.99-$13.99", "where": "Walmart; Harris Teeter; Wegmans; online", "where_sheet": "Walmart; Harris Teeter; Wegmans; online"}, {"n": 25, "item": "Mambo / wing sauce", "aisle": "Sauces & Condiments", "group": "grocery", "brands": [{"name": "Capital City Co.", "url": "https://www.capitalcity.com", "search": false, "status": "ok", "note": ""}, {"name": "Heritage Fare", "url": "https://www.google.com/search?q=Heritage+Fare+seasoning+sauce", "search": true, "status": "ok", "note": ""}], "price": "$3-$8", "where": "Walmart; Harris Teeter; Wegmans; Safeway", "where_sheet": "Walmart; Harris Teeter; Wegmans; Safeway"}, {"n": 26, "item": "BBQ sauce", "aisle": "Sauces & Condiments", "group": "grocery", "brands": [{"name": "Kyvan", "url": "https://kyvan82.com", "search": false, "status": "ok", "note": ""}, {"name": "Pitmaster LT's", "url": "https://pitmasterlt.com", "search": false, "status": "ok", "note": ""}, {"name": "Scott's Barbecue Sauce", "url": "https://scottsbarbecuesauce.com", "search": false, "status": "ok", "note": ""}, {"name": "Capital City Co.", "url": "https://www.capitalcity.com", "search": false, "status": "ok", "note": ""}], "price": "$7.99 and up", "where": "Whole Foods; Walmart; online", "where_sheet": "Whole Foods; Walmart; online"}, {"n": 27, "item": "Salsa", "aisle": "Sauces & Condiments", "group": "grocery", "brands": [{"name": "Kyvan", "url": "https://kyvan82.com", "search": false, "status": "ok", "note": ""}], "price": "$7.99", "where": "Online", "where_sheet": "Online"}, {"n": 28, "item": "Seasoning blends", "aisle": "Spices & Seasonings", "group": "grocery", "brands": [{"name": "EssieSpice", "url": "https://www.essiespice.com", "search": false, "status": "ok", "note": ""}, {"name": "A Dozen Cousins", "url": "https://adozencousins.com", "search": false, "status": "ok", "note": ""}, {"name": "Andy's Seasoning", "url": "https://www.andysseasoning.com", "search": false, "status": "ok", "note": ""}, {"name": "Iya Foods", "url": "https://www.iyafoods.com", "search": false, "status": "ok", "note": ""}, {"name": "Heritage Fare", "url": "https://www.google.com/search?q=Heritage+Fare+seasoning+sauce", "search": true, "status": "ok", "note": ""}], "price": "$2.49-$13.99", "where": "Kroger; Walmart; online", "where_sheet": "Kroger; Walmart; online"}, {"n": 29, "item": "Fish / chicken breading", "aisle": "Spices & Seasonings", "group": "grocery", "brands": [{"name": "Andy's Seasoning", "url": "https://www.andysseasoning.com", "search": false, "status": "ok", "note": ""}], "price": "$2.49", "where": "Kroger", "where_sheet": "Kroger"}, {"n": 30, "item": "Alternative flour", "aisle": "Baking", "group": "grocery", "brands": [{"name": "Iya Foods", "url": "https://www.iyafoods.com", "search": false, "status": "ok", "note": ""}], "price": "$8-$20", "where": "Amazon; specialty; online", "where_sheet": "Amazon; specialty; online"}, {"n": 31, "item": "Cornmeal / cornbread mix", "aisle": "Baking", "group": "grocery", "brands": [{"name": "Andy's Seasoning", "url": "https://www.andysseasoning.com", "search": false, "status": "ok", "note": ""}, {"name": "Cornbread26", "url": "https://cornbread26shop.com", "search": false, "status": "ok", "note": ""}], "price": "$2.49 and up", "where": "Kroger; online", "where_sheet": "Kroger; online"}, {"n": 32, "item": "Biscuits", "aisle": "Bakery", "group": "grocery", "brands": [{"name": "Mama's Biscuits", "url": "https://mamabiscuit.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Publix; Walmart; Wegmans; Trader Joe's", "where_sheet": "Publix; Walmart; Wegmans; Trader Joe's"}, {"n": 33, "item": "Bread", "aisle": "Bakery", "group": "grocery", "brands": [{"name": "Allan's Bakery", "url": "https://www.allansbakery.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Brooklyn bakery; ships online", "where_sheet": "Brooklyn bakery; ships online"}, {"n": 34, "item": "Cornbread treats", "aisle": "Bakery", "group": "grocery", "brands": [{"name": "Cornbread26", "url": "https://cornbread26shop.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}, {"n": 35, "item": "Potato chips", "aisle": "Snacks & Sweets", "group": "grocery", "brands": [{"name": "Rap Snacks", "url": "https://www.rapsnacks.net", "search": false, "status": "ok", "note": ""}, {"name": "Symphony Chips", "url": "https://symphonychips.com", "search": false, "status": "ok", "note": ""}], "price": "$1.99-$3", "where": "Walmart; Costco; Citi Trends", "where_sheet": "Walmart; Costco; Citi Trends; Target"}, {"n": 36, "item": "Popcorn", "aisle": "Snacks & Sweets", "group": "grocery", "brands": [{"name": "Pipcorn", "url": "https://www.pipsnacks.com", "search": false, "status": "ok", "note": ""}, {"name": "Rap Snacks", "url": "https://www.rapsnacks.net", "search": false, "status": "ok", "note": ""}], "price": "$4.29", "where": "Walmart; Whole Foods", "where_sheet": "Walmart; Whole Foods; Target"}, {"n": 37, "item": "Crackers", "aisle": "Snacks & Sweets", "group": "grocery", "brands": [{"name": "Partake Foods", "url": "https://partakefoods.com", "search": false, "status": "ok", "note": ""}, {"name": "Pipcorn", "url": "https://www.pipsnacks.com", "search": false, "status": "ok", "note": ""}], "price": "$4.29", "where": "Whole Foods; online", "where_sheet": "Whole Foods; Target; online"}, {"n": 38, "item": "Instant ramen", "aisle": "Snacks & Sweets", "group": "grocery", "brands": [{"name": "Rap Snacks", "url": "https://www.rapsnacks.net", "search": false, "status": "ok", "note": ""}], "price": "$1-$2", "where": "Walmart; corner stores", "where_sheet": "Walmart; corner stores"}, {"n": 39, "item": "Cookies", "aisle": "Snacks & Sweets", "group": "grocery", "brands": [{"name": "Partake Foods", "url": "https://partakefoods.com", "search": false, "status": "ok", "note": ""}, {"name": "Tonya's Cookies", "url": "https://www.tonyascookies.com", "search": false, "status": "ok", "note": ""}, {"name": "Bell's Reines", "url": "https://bellsreines.com", "search": false, "status": "ok", "note": ""}], "price": "$4.39-$17", "where": "Kroger; Walmart; Whole Foods", "where_sheet": "Kroger; Walmart; Whole Foods; Target"}, {"n": 40, "item": "Snack bars & bites", "aisle": "Snacks & Sweets", "group": "grocery", "brands": [{"name": "Partake Foods", "url": "https://partakefoods.com", "search": false, "status": "ok", "note": ""}, {"name": "BKLYN Granola (It's NOLA)", "url": "https://www.brooklyngranola.nyc", "search": false, "status": "ok", "note": ""}], "price": "$4-$8", "where": "Whole Foods; online", "where_sheet": "Whole Foods; Target; online"}, {"n": 41, "item": "Chocolate", "aisle": "Snacks & Sweets", "group": "grocery", "brands": [{"name": "Sol Cacao", "url": "https://www.solcacao.com", "search": false, "status": "ok", "note": ""}], "price": "$9", "where": "Online", "where_sheet": "Online"}, {"n": 42, "item": "Chocolate snacks", "aisle": "Snacks & Sweets", "group": "grocery", "brands": [{"name": "Sol Cacao", "url": "https://www.solcacao.com", "search": false, "status": "ok", "note": ""}, {"name": "Partake Foods", "url": "https://partakefoods.com", "search": false, "status": "ok", "note": ""}], "price": "$4-$9", "where": "Online", "where_sheet": "Target; online"}, {"n": 43, "item": "Coffee", "aisle": "Coffee & Tea", "group": "grocery", "brands": [{"name": "BLK & Bold", "url": "https://blkandbold.com", "search": false, "status": "ok", "note": ""}, {"name": "Red Bay Coffee", "url": "https://www.redbaycoffee.com", "search": false, "status": "ok", "note": ""}, {"name": "Dope Coffee", "url": "https://www.realdope.coffee", "search": false, "status": "ok", "note": ""}, {"name": "Ezra Coffee", "url": "https://ezracoffeeco.com", "search": false, "status": "ok", "note": ""}, {"name": "Chicago French Press", "url": "https://chicagofrenchpress.com", "search": false, "status": "ok", "note": ""}, {"name": "Kahawa 1893", "url": "https://kahawa1893.com", "search": false, "status": "ok", "note": ""}], "price": "$12-$19", "where": "H-E-B; online", "where_sheet": "H-E-B; Target; online"}, {"n": 44, "item": "Tea", "aisle": "Coffee & Tea", "group": "grocery", "brands": [{"name": "BLK & Bold", "url": "https://blkandbold.com", "search": false, "status": "ok", "note": ""}, {"name": "Brooklyn Tea", "url": "https://brooklyntea.com", "search": false, "status": "ok", "note": ""}, {"name": "Adjourn Teahouse", "url": "https://adjournteahouse.com", "search": false, "status": "ok", "note": ""}, {"name": "KimBees", "url": "https://www.kimbees.com", "search": false, "status": "ok", "note": ""}, {"name": "Caribbrew", "url": "https://caribbrew.com", "search": false, "status": "ok", "note": ""}], "price": "$10-$20", "where": "Specialty; online", "where_sheet": "Specialty; Target; online"}, {"n": 45, "item": "Coffee creamer", "aisle": "Coffee & Tea", "group": "grocery", "brands": [{"name": "Creamalicious", "url": "https://socreamalicious.com", "search": false, "status": "ok", "note": ""}], "price": "$4-$6", "where": "Walmart", "where_sheet": "Walmart"}, {"n": 46, "item": "Lemonade", "aisle": "Drinks", "group": "grocery", "brands": [{"name": "Me & the Bees Lemonade", "url": "https://www.meandthebees.com", "search": false, "status": "ok", "note": ""}], "price": "$27.99 (12 cans)", "where": "Whole Foods; Kroger; H-E-B; online", "where_sheet": "Whole Foods; Kroger; H-E-B; online"}, {"n": 47, "item": "Bottled water", "aisle": "Drinks", "group": "grocery", "brands": [{"name": "CellDration Water", "url": "https://www.celldrationwater.com", "search": false, "status": "ok", "note": ""}], "price": "$2-$3 a bottle", "where": "Kroger and select grocers", "where_sheet": "Kroger and select grocers"}, {"n": 48, "item": "Energy drink", "aisle": "Drinks", "group": "grocery", "brands": [{"name": "WellWithAll", "url": "https://wellwithall.com", "search": false, "status": "ok", "note": ""}], "price": "$2.79 (12 oz)", "where": "Online", "where_sheet": "Target; online"}, {"n": 49, "item": "Sparkling mixers", "aisle": "Drinks", "group": "grocery", "brands": [{"name": "Avec Drinks", "url": "https://avecdrinks.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Specialty; online", "where_sheet": "Specialty; online"}, {"n": 50, "item": "Soda", "aisle": "Drinks", "group": "grocery", "brands": [{"name": "Afropop", "url": "https://www.google.com/search?q=Afropop+soda+Oklahoma", "search": true, "status": "ok", "note": ""}], "price": "$2-$3 a can", "where": "Oklahoma stores; online", "where_sheet": "Oklahoma stores; online"}, {"n": 51, "item": "Plant-based milk", "aisle": "Drinks", "group": "grocery", "brands": [{"name": "Goodmylk", "url": "https://goodmylk.co", "search": false, "status": "verify", "note": "Could not confirm Black ownership."}], "price": "Varies", "where": "Specialty; online", "where_sheet": "Specialty; online"}, {"n": 52, "item": "Ice cream", "aisle": "Frozen", "group": "grocery", "brands": [{"name": "Creamalicious", "url": "https://socreamalicious.com", "search": false, "status": "ok", "note": ""}], "price": "$3.79 (pint)", "where": "Walmart; Kroger; Meijer", "where_sheet": "Walmart; Kroger; Meijer; Target"}, {"n": 53, "item": "Frozen yogurt", "aisle": "Frozen", "group": "grocery", "brands": [{"name": "Sweetkiwi", "url": "https://www.google.com/search?q=Sweetkiwi+frozen+yogurt", "search": true, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online; Target"}, {"n": 54, "item": "Jamaican patties", "aisle": "Frozen", "group": "grocery", "brands": [{"name": "Golden Krust", "url": "https://goldenkrust.com", "search": false, "status": "ok", "note": ""}], "price": "$4-$6 (2-pack)", "where": "Walmart; Kroger; Publix; Winn-Dixie", "where_sheet": "Walmart; Kroger; Publix; Winn-Dixie"}, {"n": 55, "item": "Sausage & deli meats", "aisle": "Meat & Fresh", "group": "grocery", "brands": [{"name": "Parker House Sausage", "url": "https://www.google.com/search?q=Parker+House+Sausage+Chicago", "search": true, "status": "ok", "note": ""}], "price": "$5-$9", "where": "Chicago area", "where_sheet": "Chicago area"}, {"n": 56, "item": "Fresh produce & vegetables", "aisle": "Meat & Fresh", "group": "grocery", "brands": [{"name": "Black Farmers Index", "url": "https://blackfarmersindex.com", "search": false, "status": "ok", "note": ""}], "price": "Farm prices", "where": "Black farms in your state (Black Farmers Index); Black-owned grocers; Black farmers markets", "where_sheet": "Black farms in your state (Black Farmers Index); Black-owned grocers; Black farmers markets"}, {"n": 57, "item": "Beef, poultry, pork & lamb", "aisle": "Meat & Fresh", "group": "grocery", "brands": [{"name": "Black Farmers Index: meat farms", "url": "https://blackfarmersindex.com/f/96-black-farmers-offering-locally-raised-meat", "search": false, "status": "ok", "note": ""}, {"name": "Black Farmers Index", "url": "https://blackfarmersindex.com", "search": false, "status": "ok", "note": ""}], "price": "Farm prices", "where": "Black farms that sell meat direct (Black Farmers Index); Black-owned grocer butcher counters", "where_sheet": "Black farms that sell meat direct (Black Farmers Index); Black-owned grocer butcher counters"}, {"n": 58, "item": "Eggs", "aisle": "Meat & Fresh", "group": "grocery", "brands": [{"name": "Black Farmers Index", "url": "https://blackfarmersindex.com", "search": false, "status": "ok", "note": ""}], "price": "Farm prices", "where": "Black farms in your state (Black Farmers Index); Black farmers markets", "where_sheet": "Black farms in your state (Black Farmers Index); Black farmers markets"}, {"n": 59, "item": "Wine", "aisle": "Wine & Spirits", "group": "grocery", "brands": [{"name": "McBride Sisters", "url": "https://www.mcbridesisters.com", "search": false, "status": "ok", "note": ""}, {"name": "Brown Estate", "url": "https://www.brownestate.com", "search": false, "status": "ok", "note": ""}, {"name": "Maison Noir", "url": "https://maisonnoirwines.com", "search": false, "status": "ok", "note": ""}, {"name": "Love Cork Screw", "url": "https://lovecorkscrew.com", "search": false, "status": "ok", "note": ""}], "price": "$15-$30", "where": "Grocery wine aisles; online", "where_sheet": "Grocery wine aisles; Target; online"}, {"n": 60, "item": "Spirits", "aisle": "Wine & Spirits", "group": "grocery", "brands": [{"name": "Uncle Nearest", "url": "https://unclenearest.com", "search": false, "status": "verify", "note": "Check recent news on the company's finances."}, {"name": "Sorel Liqueur", "url": "https://sorelofficial.com", "search": false, "status": "ok", "note": ""}], "price": "$40-$60", "where": "State liquor stores (ABC in Virginia)", "where_sheet": "State liquor stores (ABC in Virginia)"}, {"n": 61, "item": "Hard seltzer", "aisle": "Wine & Spirits", "group": "grocery", "brands": [{"name": "Grown Folks", "url": "https://www.drinkgrownfolks.com", "search": false, "status": "ok", "note": ""}], "price": "$15-$18 (variety pack)", "where": "Whole Foods; Total Wine; Sam's Club", "where_sheet": "Whole Foods; Total Wine; Sam's Club"}, {"n": 62, "item": "Toothpaste", "aisle": "Oral Care", "group": "toiletries", "brands": [{"name": "Coral Oral", "url": "https://coraloral.com", "search": false, "status": "ok", "note": ""}, {"name": "Garner's Garden", "url": "https://garnersgarden.com", "search": false, "status": "ok", "note": ""}], "price": "From $7.99", "where": "Online", "where_sheet": "Online"}, {"n": 63, "item": "Toothbrushes", "aisle": "Oral Care", "group": "toiletries", "brands": [{"name": "Coral Oral", "url": "https://coraloral.com", "search": false, "status": "ok", "note": ""}, {"name": "BigMouthToothBrush", "url": "https://bigmouthtoothbrush.com", "search": false, "status": "ok", "note": ""}], "price": "$4-$8", "where": "Online", "where_sheet": "Online"}, {"n": 64, "item": "Mouthwash", "aisle": "Oral Care", "group": "toiletries", "brands": [{"name": "Coral Oral", "url": "https://coraloral.com", "search": false, "status": "ok", "note": ""}, {"name": "Garner's Garden", "url": "https://garnersgarden.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}, {"n": 65, "item": "Floss / floss picks", "aisle": "Oral Care", "group": "toiletries", "brands": [{"name": "Coral Oral", "url": "https://coraloral.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}, {"n": 66, "item": "Tooth powder", "aisle": "Oral Care", "group": "toiletries", "brands": [{"name": "Garner's Garden", "url": "https://garnersgarden.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}, {"n": 67, "item": "Electric toothbrush", "aisle": "Oral Care", "group": "toiletries", "brands": [{"name": "Coral Oral", "url": "https://coraloral.com", "search": false, "status": "ok", "note": ""}, {"name": "BigMouthToothBrush", "url": "https://bigmouthtoothbrush.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}, {"n": 68, "item": "Bar soap", "aisle": "Bath & Body", "group": "toiletries", "brands": [{"name": "Alaffia", "url": "https://www.alaffia.com", "search": false, "status": "ok", "note": ""}, {"name": "Eden Fresh", "url": "https://www.supportblackowned.com/eden-fresh-personal-care-products", "search": false, "status": "ok", "note": ""}, {"name": "Signature Sudz", "url": "https://www.google.com/search?q=Signature+Sudz+soap+Houston", "search": true, "status": "ok", "note": ""}], "price": "$4-$8", "where": "Walmart (Alaffia); online", "where_sheet": "Walmart (Alaffia); online"}, {"n": 69, "item": "Body wash", "aisle": "Bath & Body", "group": "toiletries", "brands": [{"name": "Alaffia", "url": "https://www.alaffia.com", "search": false, "status": "ok", "note": ""}, {"name": "Urban Hydration", "url": "https://www.urbanhydration.com", "search": false, "status": "ok", "note": ""}, {"name": "Garner's Garden", "url": "https://garnersgarden.com", "search": false, "status": "ok", "note": ""}, {"name": "TPH by Taraji", "url": "https://tphbytaraji.com", "search": false, "status": "ok", "note": ""}, {"name": "The Honey Pot", "url": "https://thehoneypot.co", "search": false, "status": "changed", "note": "Black-founded. Majority stake sold to an investment firm in 2024; founder still leads."}], "price": "$10-$13", "where": "Walmart", "where_sheet": "Walmart"}, {"n": 70, "item": "Body lotion", "aisle": "Bath & Body", "group": "toiletries", "brands": [{"name": "Alaffia", "url": "https://www.alaffia.com", "search": false, "status": "ok", "note": ""}, {"name": "Urban Hydration", "url": "https://www.urbanhydration.com", "search": false, "status": "ok", "note": ""}, {"name": "Pardo Naturals", "url": "https://pardonaturals.com", "search": false, "status": "ok", "note": ""}, {"name": "Loved01", "url": "https://loved01.com", "search": false, "status": "ok", "note": ""}], "price": "$8-$20", "where": "Walmart; online", "where_sheet": "Walmart; online"}, {"n": 71, "item": "Body butter", "aisle": "Bath & Body", "group": "toiletries", "brands": [{"name": "Pardo Naturals", "url": "https://pardonaturals.com", "search": false, "status": "ok", "note": ""}, {"name": "Eden Fresh", "url": "https://www.supportblackowned.com/eden-fresh-personal-care-products", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}, {"n": 72, "item": "Deodorant", "aisle": "Bath & Body", "group": "toiletries", "brands": [{"name": "Urban Hydration", "url": "https://www.urbanhydration.com", "search": false, "status": "ok", "note": ""}, {"name": "Pardo Naturals", "url": "https://pardonaturals.com", "search": false, "status": "ok", "note": ""}, {"name": "Alaffia", "url": "https://www.alaffia.com", "search": false, "status": "ok", "note": ""}, {"name": "The Honey Pot", "url": "https://thehoneypot.co", "search": false, "status": "changed", "note": "Black-founded. Majority stake sold to an investment firm in 2024; founder still leads."}], "price": "Varies", "where": "Walmart; online", "where_sheet": "Walmart; online"}, {"n": 73, "item": "Hand soap", "aisle": "Bath & Body", "group": "toiletries", "brands": [{"name": "Signature Sudz", "url": "https://www.google.com/search?q=Signature+Sudz+soap+Houston", "search": true, "status": "ok", "note": ""}, {"name": "Alaffia", "url": "https://www.alaffia.com", "search": false, "status": "ok", "note": ""}, {"name": "Urban Hydration", "url": "https://www.urbanhydration.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Walmart; online", "where_sheet": "Walmart; online"}, {"n": 74, "item": "Hand sanitizer", "aisle": "Bath & Body", "group": "toiletries", "brands": [{"name": "EcoDaisy", "url": "https://www.google.com/search?q=EcoDaisy+cleaning+products", "search": true, "status": "ok", "note": ""}, {"name": "Alaffia", "url": "https://www.alaffia.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}, {"n": 75, "item": "Body scrub", "aisle": "Bath & Body", "group": "toiletries", "brands": [{"name": "Pardo Naturals", "url": "https://pardonaturals.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}, {"n": 76, "item": "Perfume / body oil", "aisle": "Bath & Body", "group": "toiletries", "brands": [{"name": "Pardo Naturals", "url": "https://pardonaturals.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}, {"n": 77, "item": "Face cleanser", "aisle": "Skin & Sun", "group": "toiletries", "brands": [{"name": "Alaffia", "url": "https://www.alaffia.com", "search": false, "status": "ok", "note": ""}, {"name": "Urban Hydration", "url": "https://www.urbanhydration.com", "search": false, "status": "ok", "note": ""}, {"name": "Bolden", "url": "https://www.boldenusa.com", "search": false, "status": "ok", "note": ""}, {"name": "Loved01", "url": "https://loved01.com", "search": false, "status": "ok", "note": ""}], "price": "$10-$20", "where": "Walmart; online", "where_sheet": "Walmart; online"}, {"n": 78, "item": "Face moisturizer", "aisle": "Skin & Sun", "group": "toiletries", "brands": [{"name": "Alaffia", "url": "https://www.alaffia.com", "search": false, "status": "ok", "note": ""}, {"name": "Bolden", "url": "https://www.boldenusa.com", "search": false, "status": "ok", "note": ""}, {"name": "Urban Hydration", "url": "https://www.urbanhydration.com", "search": false, "status": "ok", "note": ""}, {"name": "Loved01", "url": "https://loved01.com", "search": false, "status": "ok", "note": ""}], "price": "$10-$20", "where": "Walmart; online", "where_sheet": "Walmart; online"}, {"n": 79, "item": "Sunscreen", "aisle": "Skin & Sun", "group": "toiletries", "brands": [{"name": "Black Girl Sunscreen", "url": "https://blackgirlsunscreen.com", "search": false, "status": "ok", "note": ""}, {"name": "Kinlō", "url": "https://www.kinlo.com", "search": false, "status": "verify", "note": "Could not confirm Black ownership."}], "price": "$16-$19", "where": "Walmart; CVS", "where_sheet": "Walmart; CVS"}, {"n": 80, "item": "Lip balm", "aisle": "Skin & Sun", "group": "toiletries", "brands": [{"name": "The Lip Bar", "url": "https://thelipbar.com", "search": false, "status": "ok", "note": ""}, {"name": "Pardo Naturals", "url": "https://pardonaturals.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Walmart; online", "where_sheet": "Walmart; online"}, {"n": 81, "item": "Kids' sunscreen", "aisle": "Skin & Sun", "group": "toiletries", "brands": [{"name": "Black Girl Sunscreen", "url": "https://blackgirlsunscreen.com", "search": false, "status": "ok", "note": ""}], "price": "$16-$19", "where": "Walmart; CVS", "where_sheet": "Walmart; CVS"}, {"n": 82, "item": "Shampoo", "aisle": "Hair Care", "group": "toiletries", "brands": [{"name": "Camille Rose", "url": "https://www.camillerose.com", "search": false, "status": "ok", "note": ""}, {"name": "Pattern Beauty", "url": "https://patternbeauty.com", "search": false, "status": "ok", "note": ""}, {"name": "Taliah Waajid", "url": "https://naturalhair.org", "search": false, "status": "ok", "note": ""}, {"name": "Design Essentials", "url": "https://designessentials.com", "search": false, "status": "ok", "note": ""}, {"name": "Alaffia", "url": "https://www.alaffia.com", "search": false, "status": "ok", "note": ""}, {"name": "Mielle", "url": "https://mielleorganics.com", "search": false, "status": "changed", "note": "Black-founded. Sold to Procter & Gamble in 2023."}], "price": "$12-$25", "where": "Walmart; CVS; beauty supply", "where_sheet": "Walmart; CVS; beauty supply"}, {"n": 83, "item": "Conditioner", "aisle": "Hair Care", "group": "toiletries", "brands": [{"name": "Camille Rose", "url": "https://www.camillerose.com", "search": false, "status": "ok", "note": ""}, {"name": "Pattern Beauty", "url": "https://patternbeauty.com", "search": false, "status": "ok", "note": ""}, {"name": "Taliah Waajid", "url": "https://naturalhair.org", "search": false, "status": "ok", "note": ""}, {"name": "Design Essentials", "url": "https://designessentials.com", "search": false, "status": "ok", "note": ""}, {"name": "Alaffia", "url": "https://www.alaffia.com", "search": false, "status": "ok", "note": ""}, {"name": "Mielle", "url": "https://mielleorganics.com", "search": false, "status": "changed", "note": "Black-founded. Sold to Procter & Gamble in 2023."}], "price": "$12-$25", "where": "Walmart; CVS; beauty supply", "where_sheet": "Walmart; CVS; beauty supply"}, {"n": 84, "item": "Styling products", "aisle": "Hair Care", "group": "toiletries", "brands": [{"name": "Camille Rose", "url": "https://www.camillerose.com", "search": false, "status": "ok", "note": ""}, {"name": "Miss Jessie's", "url": "https://missjessies.com", "search": false, "status": "ok", "note": ""}, {"name": "Taliah Waajid", "url": "https://naturalhair.org", "search": false, "status": "ok", "note": ""}, {"name": "Scotch Porter", "url": "https://www.scotchporter.com", "search": false, "status": "ok", "note": ""}, {"name": "Mielle", "url": "https://mielleorganics.com", "search": false, "status": "changed", "note": "Black-founded. Sold to Procter & Gamble in 2023."}], "price": "$12-$25", "where": "Walmart; CVS; beauty supply", "where_sheet": "Walmart; CVS; beauty supply"}, {"n": 85, "item": "Hair oil & growth serum", "aisle": "Hair Care", "group": "toiletries", "brands": [{"name": "Camille Rose", "url": "https://www.camillerose.com", "search": false, "status": "ok", "note": ""}, {"name": "Mielle", "url": "https://mielleorganics.com", "search": false, "status": "changed", "note": "Black-founded. Sold to Procter & Gamble in 2023."}], "price": "$12-$20", "where": "Walmart; CVS; beauty supply", "where_sheet": "Walmart; CVS; beauty supply"}, {"n": 86, "item": "Kids' hair care", "aisle": "Hair Care", "group": "toiletries", "brands": [{"name": "Taliah Waajid", "url": "https://naturalhair.org", "search": false, "status": "ok", "note": ""}, {"name": "Camille Rose", "url": "https://www.camillerose.com", "search": false, "status": "ok", "note": ""}], "price": "$8-$25", "where": "Walmart; beauty supply; online", "where_sheet": "Walmart; beauty supply; online"}, {"n": 87, "item": "Beard care", "aisle": "Men's Grooming", "group": "toiletries", "brands": [{"name": "Scotch Porter", "url": "https://www.scotchporter.com", "search": false, "status": "ok", "note": ""}, {"name": "Frederick Benjamin", "url": "https://www.google.com/search?q=Frederick+Benjamin+grooming", "search": true, "status": "ok", "note": ""}, {"name": "Urban Hydration", "url": "https://www.urbanhydration.com", "search": false, "status": "ok", "note": ""}, {"name": "Bevel", "url": "https://getbevel.com", "search": false, "status": "changed", "note": "Black-founded. Owned by Procter & Gamble since 2018."}], "price": "$15-$30", "where": "Online; Walmart", "where_sheet": "Online; Walmart"}, {"n": 88, "item": "Shaving", "aisle": "Men's Grooming", "group": "toiletries", "brands": [{"name": "Scotch Porter", "url": "https://www.scotchporter.com", "search": false, "status": "ok", "note": ""}, {"name": "Bevel", "url": "https://getbevel.com", "search": false, "status": "changed", "note": "Black-founded. Owned by Procter & Gamble since 2018."}], "price": "$15-$30", "where": "Online; Walmart", "where_sheet": "Online; Walmart"}, {"n": 89, "item": "Men's face wash", "aisle": "Men's Grooming", "group": "toiletries", "brands": [{"name": "Bolden", "url": "https://www.boldenusa.com", "search": false, "status": "ok", "note": ""}, {"name": "Scotch Porter", "url": "https://www.scotchporter.com", "search": false, "status": "ok", "note": ""}, {"name": "Urban Hydration", "url": "https://www.urbanhydration.com", "search": false, "status": "ok", "note": ""}], "price": "$10-$20", "where": "Walmart; online", "where_sheet": "Walmart; online"}, {"n": 90, "item": "Feminine wash", "aisle": "Feminine Care", "group": "toiletries", "brands": [{"name": "TPH by Taraji", "url": "https://tphbytaraji.com", "search": false, "status": "ok", "note": ""}, {"name": "The Honey Pot", "url": "https://thehoneypot.co", "search": false, "status": "changed", "note": "Black-founded. Majority stake sold to an investment firm in 2024; founder still leads."}], "price": "$9.88 (5.5 oz)", "where": "Walmart; Kroger", "where_sheet": "Walmart; Kroger"}, {"n": 91, "item": "Pads / tampons", "aisle": "Feminine Care", "group": "toiletries", "brands": [{"name": "The Honey Pot", "url": "https://thehoneypot.co", "search": false, "status": "changed", "note": "Black-founded. Majority stake sold to an investment firm in 2024; founder still leads."}], "price": "Varies", "where": "Walmart; Kroger", "where_sheet": "Walmart; Kroger"}, {"n": 92, "item": "Diapers", "aisle": "Baby", "group": "toiletries", "brands": [{"name": "The Happy Hues Co.", "url": "https://happyhues.com", "search": false, "status": "ok", "note": ""}, {"name": "TinkyPoo", "url": "https://tinkypoo.com", "search": false, "status": "ok", "note": ""}], "price": "$13.99-$20 a pack", "where": "Brand sites", "where_sheet": "Brand sites; Target"}, {"n": 93, "item": "Baby wipes", "aisle": "Baby", "group": "toiletries", "brands": [{"name": "The Happy Hues Co.", "url": "https://happyhues.com", "search": false, "status": "ok", "note": ""}, {"name": "TinkyPoo", "url": "https://tinkypoo.com", "search": false, "status": "ok", "note": ""}], "price": "$15.99-$19.99 (4-pack)", "where": "Brand sites", "where_sheet": "Brand sites; Target"}, {"n": 94, "item": "Baby wash", "aisle": "Baby", "group": "toiletries", "brands": [{"name": "Alaffia", "url": "https://www.alaffia.com", "search": false, "status": "ok", "note": ""}, {"name": "The Honey Pot", "url": "https://thehoneypot.co", "search": false, "status": "changed", "note": "Black-founded. Majority stake sold to an investment firm in 2024; founder still leads."}], "price": "Varies", "where": "Walmart; online", "where_sheet": "Walmart; online"}, {"n": 95, "item": "Laundry detergent", "aisle": "Laundry", "group": "household", "brands": [{"name": "True Products", "url": "https://www.thetrueproducts.com", "search": false, "status": "ok", "note": ""}, {"name": "Pardo Naturals", "url": "https://pardonaturals.com", "search": false, "status": "ok", "note": ""}, {"name": "Dinobi", "url": "https://www.google.com/search?q=Dinobi+detergent", "search": true, "status": "ok", "note": ""}, {"name": "PUR Home", "url": "https://www.google.com/search?q=PUR+Home+natural+cleaning+products+Angela+Richardson", "search": true, "status": "ok", "note": ""}, {"name": "EcoDaisy", "url": "https://www.google.com/search?q=EcoDaisy+cleaning+products", "search": true, "status": "ok", "note": ""}], "price": "About 17 cents a load (True)", "where": "Online", "where_sheet": "Online"}, {"n": 96, "item": "Dryer sheets & softener", "aisle": "Laundry", "group": "household", "brands": [{"name": "True Products", "url": "https://www.thetrueproducts.com", "search": false, "status": "ok", "note": ""}], "price": "$10-$15", "where": "Online", "where_sheet": "Online"}, {"n": 97, "item": "Laundry sheets", "aisle": "Laundry", "group": "household", "brands": [{"name": "True Products", "url": "https://www.thetrueproducts.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}, {"n": 98, "item": "Dish soap", "aisle": "Cleaning", "group": "household", "brands": [{"name": "PUR Home", "url": "https://www.google.com/search?q=PUR+Home+natural+cleaning+products+Angela+Richardson", "search": true, "status": "ok", "note": ""}, {"name": "Dinobi", "url": "https://www.google.com/search?q=Dinobi+detergent", "search": true, "status": "ok", "note": ""}, {"name": "Signature Sudz", "url": "https://www.google.com/search?q=Signature+Sudz+soap+Houston", "search": true, "status": "ok", "note": ""}, {"name": "Clean Design Home", "url": "https://cleandesignhome.com", "search": false, "status": "ok", "note": ""}], "price": "$6-$12", "where": "Online", "where_sheet": "Online"}, {"n": 99, "item": "All-purpose cleaner", "aisle": "Cleaning", "group": "household", "brands": [{"name": "PUR Home", "url": "https://www.google.com/search?q=PUR+Home+natural+cleaning+products+Angela+Richardson", "search": true, "status": "ok", "note": ""}, {"name": "EcoDaisy", "url": "https://www.google.com/search?q=EcoDaisy+cleaning+products", "search": true, "status": "ok", "note": ""}, {"name": "Signature Sudz", "url": "https://www.google.com/search?q=Signature+Sudz+soap+Houston", "search": true, "status": "ok", "note": ""}, {"name": "Pardo Naturals", "url": "https://pardonaturals.com", "search": false, "status": "ok", "note": ""}], "price": "$9-$10", "where": "Online", "where_sheet": "Online"}, {"n": 100, "item": "Toilet cleaner", "aisle": "Cleaning", "group": "household", "brands": [{"name": "PUR Home", "url": "https://www.google.com/search?q=PUR+Home+natural+cleaning+products+Angela+Richardson", "search": true, "status": "ok", "note": ""}, {"name": "Pardo Naturals", "url": "https://pardonaturals.com", "search": false, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}, {"n": 101, "item": "Toilet paper", "aisle": "Paper Goods", "group": "household", "brands": [{"name": "Leafy Products", "url": "https://www.getleafyproducts.com", "search": false, "status": "ok", "note": ""}, {"name": "Reel Paper", "url": "https://www.reelpaper.com", "search": false, "status": "ok", "note": ""}, {"name": "Freedom Paper Co.", "url": "https://www.google.com/search?q=Freedom+Paper+Co.+toilet+paper", "search": true, "status": "ok", "note": ""}], "price": "$22.99-$47.99 (12-24 rolls)", "where": "Online subscription", "where_sheet": "Online subscription; Target"}, {"n": 102, "item": "Paper towels", "aisle": "Paper Goods", "group": "household", "brands": [{"name": "Reel Paper", "url": "https://www.reelpaper.com", "search": false, "status": "ok", "note": ""}, {"name": "Freedom Paper Co.", "url": "https://www.google.com/search?q=Freedom+Paper+Co.+toilet+paper", "search": true, "status": "ok", "note": ""}], "price": "$25-$35 (12 rolls)", "where": "Online subscription", "where_sheet": "Online subscription; Target"}, {"n": 103, "item": "Trash bags", "aisle": "Paper Goods", "group": "household", "brands": [{"name": "Freedom Paper Co.", "url": "https://www.google.com/search?q=Freedom+Paper+Co.+toilet+paper", "search": true, "status": "ok", "note": ""}], "price": "Varies", "where": "Online", "where_sheet": "Online"}], "grocers": [{"name": "E. Palmer Supermarket", "city": "Norfolk", "state": "VA", "address": "201 E. Berkley Ave, Norfolk, VA 23523", "phone": "(757) 904-6444", "url": "https://berkleysupermarket.com", "note": "Black- and veteran-owned. Full grocery, seafood, butcher, soul food kitchen. Hosts the Mid-Atlantic Black Farmers Market."}, {"name": "The Vineyard's Storehouse", "city": "Hampton", "state": "VA", "address": "1529 E. Pembroke Ave, Hampton, VA", "phone": "", "url": "", "note": "Black-owned nonprofit grocery. Limited hours; call ahead."}, {"name": "Forty Acres Fresh Market", "city": "Chicago", "state": "IL", "address": "Chicago Ave & Waller Ave (Austin)", "phone": "", "url": "https://fortyacresfreshmarket.com", "note": "Opened Sept 2025 by Liz Abunaw."}, {"name": "Detroit People's Food Co-op", "city": "Detroit", "state": "MI", "address": "8324 Woodward Ave, Detroit, MI", "phone": "", "url": "", "note": "Black-led, member-owned co-op. Opened May 2024."}, {"name": "Neighborhood Grocery", "city": "Detroit", "state": "MI", "address": "500 Manistique St, Detroit, MI", "phone": "", "url": "", "note": "Black-owned, Jefferson-Chalmers. Opened 2022."}, {"name": "The Country Meat Co. Marketplace", "city": "Cincinnati", "state": "OH", "address": "3539 Reading Rd, Cincinnati, OH", "phone": "", "url": "", "note": "Cincinnati's first Black-owned full-service grocery (Feb 2025)."}, {"name": "Oasis Fresh Market", "city": "Tulsa", "state": "OK", "address": "Pine St & Peoria Ave, Tulsa, OK (plus 62nd & Peoria and downtown)", "phone": "", "url": "", "note": "Black-owned by A.J. Johnson. Expanded to 3 stores in 2026."}, {"name": "District Market Green Grocer", "city": "Houston", "state": "TX", "address": "3337 Cypress Creek Pkwy, Houston, TX", "phone": "", "url": "", "note": "Black-owned; carries 30+ Black vendors."}, {"name": "Sure Save Food and Beauty", "city": "East Point", "state": "GA", "address": "3286 Washington Rd, East Point, GA", "phone": "", "url": "", "note": "Black woman-owned. Opened Dec 2024."}, {"name": "Truly Living Well", "city": "East Point / Fayetteville", "state": "GA", "address": "East Point and Fayetteville, GA", "phone": "", "url": "https://www.trulylivingwell.com", "note": "Black-owned urban farm market with online ordering."}, {"name": "Nourish + Bloom Market", "city": "Fayetteville", "state": "GA", "address": "Fayetteville, GA", "phone": "", "url": "", "note": "Black-owned autonomous (cashierless) market."}, {"name": "Nanni Health Food Store", "city": "Brooklyn", "state": "NY", "address": "5222 Church Ave, Brooklyn, NY", "phone": "", "url": "", "note": "Black-owned since 2002; health foods."}, {"name": "West Phillie Produce", "city": "Philadelphia", "state": "PA", "address": "18 S. 62nd St, Philadelphia, PA", "phone": "", "url": "https://www.westphillieproduce.com", "note": "Black-owned since 2009; fresh produce."}, {"name": "BL Grocery", "city": "Memphis", "state": "TN", "address": "South Memphis, TN", "phone": "", "url": "", "note": "Black-owned. Opened 2022; call ahead."}, {"name": "Simply Wholesome", "city": "Los Angeles", "state": "CA", "address": "4508 W. Slauson Ave, Los Angeles, CA", "phone": "", "url": "https://simplywholesome.com", "note": "Long-running Black-owned health food market and cafe."}, {"name": "Modaland Market Place", "city": "Las Vegas", "state": "NV", "address": "Las Vegas, NV", "phone": "", "url": "https://www.modalandmarket.com", "note": "African and Caribbean groceries."}, {"name": "Cleo's Bodega", "city": "Indianapolis", "state": "IN", "address": "Flanner House, Indianapolis, IN", "phone": "", "url": "https://flannerhouse.org/cleos-bodega-grocery-cafe/", "note": "Grocery and cafe run by Flanner House."}], "order": ["Breakfast", "Pantry", "Canned Goods", "Sauces & Condiments", "Spices & Seasonings", "Baking", "Bakery", "Snacks & Sweets", "Coffee & Tea", "Drinks", "Frozen", "Meat & Fresh", "Wine & Spirits", "Oral Care", "Bath & Body", "Skin & Sun", "Hair Care", "Men's Grooming", "Feminine Care", "Baby", "Laundry", "Cleaning", "Paper Goods"], "group": {"Breakfast": "grocery", "Pantry": "grocery", "Canned Goods": "grocery", "Sauces & Condiments": "grocery", "Spices & Seasonings": "grocery", "Baking": "grocery", "Bakery": "grocery", "Snacks & Sweets": "grocery", "Coffee & Tea": "grocery", "Drinks": "grocery", "Frozen": "grocery", "Meat & Fresh": "grocery", "Wine & Spirits": "grocery", "Oral Care": "toiletries", "Bath & Body": "toiletries", "Skin & Sun": "toiletries", "Hair Care": "toiletries", "Men's Grooming": "toiletries", "Feminine Care": "toiletries", "Baby": "toiletries", "Laundry": "household", "Cleaning": "household", "Paper Goods": "household"}}</script>
+<script>
+(function(){
+  var D = JSON.parse(document.getElementById('data').textContent);
+  var GROUP_LABEL = {grocery:'Groceries', toiletries:'Toiletries', household:'Household'};
+  var GROUP_COLOR = {grocery:'var(--green)', toiletries:'var(--gold)', household:'var(--red)'};
+  var STATES = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
+  var ZIP = [[10,27,'MA'],[28,29,'RI'],[30,38,'NH'],[39,49,'ME'],[50,59,'VT'],[60,69,'CT'],[70,89,'NJ'],[100,149,'NY'],[150,196,'PA'],[197,199,'DE'],[200,200,'DC'],[201,201,'VA'],[202,205,'DC'],[206,219,'MD'],[220,246,'VA'],[247,268,'WV'],[270,289,'NC'],[290,299,'SC'],[300,319,'GA'],[320,349,'FL'],[350,369,'AL'],[370,385,'TN'],[386,397,'MS'],[398,399,'GA'],[400,427,'KY'],[430,459,'OH'],[460,479,'IN'],[480,499,'MI'],[500,528,'IA'],[530,549,'WI'],[550,567,'MN'],[570,577,'SD'],[580,588,'ND'],[590,599,'MT'],[600,629,'IL'],[630,658,'MO'],[660,679,'KS'],[680,693,'NE'],[700,714,'LA'],[716,729,'AR'],[730,749,'OK'],[750,799,'TX'],[800,816,'CO'],[820,831,'WY'],[832,838,'ID'],[840,847,'UT'],[850,865,'AZ'],[870,884,'NM'],[885,885,'TX'],[889,898,'NV'],[900,961,'CA'],[967,968,'HI'],[970,979,'OR'],[980,994,'WA'],[995,999,'AK']];
+  // nearby states, so a search in one state also surfaces close options
+  var NEAR = {VA:['NC','MD','DC'],NC:['VA','SC','GA'],MD:['VA','DC','PA'],DC:['VA','MD'],GA:['SC','TN','AL'],SC:['GA','NC'],FL:['GA'],AL:['GA','TN'],TN:['GA','MS'],MS:['TN'],OH:['IN','MI','KY'],IN:['OH','IL','MI'],IL:['IN'],MI:['OH','IN'],KY:['OH','IN','TN'],PA:['NY','NJ','OH'],NY:['NJ','PA'],NJ:['NY','PA'],TX:['OK','LA'],OK:['TX'],LA:['TX','MS'],CA:['NV'],NV:['CA'],AR:['TN','OK'],MO:['IL'],WI:['IL'],DE:['PA','MD']};
+
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function store(k,v){try{ if(v===undefined){return localStorage.getItem(k);} localStorage.setItem(k,v);}catch(e){return null;}}
+
+  /* ---------- grocer finder ---------- */
+  function parseState(q){
+    q = q.trim();
+    if(!q) return null;
+    var m = q.match(/\b(\d{5})\b/);
+    if(m){var p=parseInt(m[1].slice(0,3),10);for(var i=0;i<ZIP.length;i++){if(p>=ZIP[i][0]&&p<=ZIP[i][1])return ZIP[i][2];}}
+    var up = q.toUpperCase();
+    var codeM = up.match(/(?:^|[\s,])([A-Z]{2})$/);
+    if(codeM && STATES[codeM[1]]) return codeM[1];
+    if(STATES[up]) return up;
+    var low=q.toLowerCase();
+    for(var k in STATES){ if(low.indexOf(STATES[k].toLowerCase())>-1) return k; }
+    return null;
+  }
+  function grocerCard(g, home){
+    var maps='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(g.name+' '+g.address);
+    return '<div class="grocer'+(home?' home':'')+'"><h4>'+esc(g.name)+'</h4><div class="where">'+esc(g.city)+', '+esc(g.state)+(g.phone?' · '+esc(g.phone):'')+'</div><p>'+esc(g.note)+'</p><div class="acts"><a href="'+maps+'" target="_blank" rel="noopener">Directions</a>'+(g.url?'<a href="'+esc(g.url)+'" target="_blank" rel="noopener">Website</a>':'')+'</div></div>';
+  }
+  function runFind(){
+    var q=document.getElementById('loc').value;
+    var where = q.trim() ? q.trim() : 'me';
+    var near = q.trim() ? 'near '+q.trim() : 'near me';
+    document.getElementById('gmaps').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Black-owned grocery store '+near);
+    document.getElementById('gmapsSub').textContent='Black-owned grocery stores '+near;
+    document.getElementById('yelp').href='https://www.yelp.com/search?find_desc='+encodeURIComponent('Black Owned Grocery Stores')+(q.trim()?'&find_loc='+encodeURIComponent(q.trim()):'');
+    document.getElementById('farm2').href=document.getElementById('farm').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Black farmers market '+near);
+    var st=parseState(q), city=q.split(',')[0].trim().toLowerCase();
+    var list=document.getElementById('grocerList'), status=document.getElementById('findStatus');
+    var gs=D.grocers;
+    if(!q.trim()){
+      status.className='status';
+      status.textContent='All '+gs.length+' grocers we\'ve verified. Search to narrow it to your area.';
+      list.innerHTML=gs.map(function(g,i){return grocerCard(g,i===0);}).join('');
+      return;
+    }
+    var inState=gs.filter(function(g){return (st&&g.state===st)||(city.length>2&&g.city.toLowerCase().indexOf(city)>-1);});
+    var nearby=st&&NEAR[st]?gs.filter(function(g){return NEAR[st].indexOf(g.state)>-1&&inState.indexOf(g)<0;}):[];
+    var html='';
+    if(inState.length){
+      status.className='status hit';
+      status.textContent=inState.length+' verified in '+(st?STATES[st]:'your area')+'. Call ahead to confirm hours.';
+      html+=inState.map(function(g){return grocerCard(g,true);}).join('');
+    } else {
+      status.className='status none';
+      status.textContent='We haven\'t verified a Black-owned grocer in '+(st?STATES[st]:'that area')+' yet. Tap Google Maps or Yelp on the left for live results near you.';
+    }
+    if(nearby.length){html+='<div class="where" style="margin-top:6px">Close by in neighboring states</div>'+nearby.map(function(g){return grocerCard(g,false);}).join('');}
+    list.innerHTML=html;
+  }
+  document.getElementById('findForm').addEventListener('submit',function(e){e.preventDefault();runFind();});
+  document.getElementById('loc').addEventListener('input',function(){ if(!this.value.trim()) runFind(); });
+  runFind();
+
+  /* ---------- shopping list ---------- */
+  var mine={}; try{mine=JSON.parse(store('bb-mine')||'{}')||{};}catch(e){mine={};}
+  var state={cat:'all',q:'',pure:false,onlyMine:false};
+  var openSet={};
+  var tabs=document.getElementById('tabs');
+  function countOf(cat){return D.items.filter(function(it){return cat==='all'||it.group===cat||it.aisle===cat;}).length;}
+  function addTab(cat,label,cls,color){
+    var b=document.createElement('button');b.type='button';b.className='tab'+(cls?' '+cls:'');b.dataset.cat=cat;
+    b.innerHTML=(color?'<span class="g" style="background:'+color+'"></span>':'')+esc(label)+'<span class="n">'+countOf(cat)+'</span>';
+    b.setAttribute('aria-pressed',cat==='all'?'true':'false');
+    b.addEventListener('click',function(){selectCat(cat);});
+    tabs.appendChild(b);
+  }
+  function selectCat(cat){
+    state.cat=cat;state.onlyMine=false;updateMineBtn();openSet={};
+    var lab=cat==='all'?'All':(GROUP_LABEL[cat]?'All '+GROUP_LABEL[cat].toLowerCase():cat);
+    document.getElementById('aisleNow').textContent=lab;
+    if(isPhone()){closeSheet();jumpToList();}
+    [].forEach.call(tabs.querySelectorAll('.tab'),function(t){t.setAttribute('aria-pressed',t.dataset.cat===cat?'true':'false');});
+    render();
+  }
+  addTab('all','All','grp');
+  ['grocery','toiletries','household'].forEach(function(g){addTab(g,'All '+GROUP_LABEL[g].toLowerCase(),'grp',GROUP_COLOR[g]);});
+  var sep=document.createElement('span');sep.className='sep';tabs.appendChild(sep);
+  D.order.forEach(function(a){ if(countOf(a)) addTab(a,a,'',GROUP_COLOR[D.group[a]]); });
+  function whereHTML(w){ return esc(w); }
+  function render(){
+    var q=state.q.trim().toLowerCase();
+    var grid=document.getElementById('grid');
+    var out=[], shown=0;
+    var matches=D.items.filter(function(it){ if(!q) return false; return (it.item+' '+it.aisle+' '+it.brands.map(function(b){return b.name;}).join(' ')).toLowerCase().indexOf(q)>=0; }).length;
+    var autoOpen=!!q&&matches<=3;
+    D.items.forEach(function(it){
+      if(state.cat!=='all'&&it.group!==state.cat&&it.aisle!==state.cat) return;
+      if(state.onlyMine&&!mine[it.n]) return;
+      var brands=it.brands.filter(function(b){return !state.pure||b.status==='ok';});
+      if(q){
+        var hay=(it.item+' '+it.aisle+' '+it.brands.map(function(b){return b.name;}).join(' ')).toLowerCase();
+        if(hay.indexOf(q)<0) return;
+      }
+      if(state.pure&&!brands.length) return;
+      shown++;
+      var chips=brands.map(function(b){
+        var dot='<span class="dot d-'+b.status+'"></span>';
+        if(!b.url) return '<span class="chip plain">'+dot+esc(b.name)+'</span>';
+        return '<a class="chip" href="'+esc(b.url)+'" target="_blank" rel="noopener" title="'+esc(b.search?'No official site found. Opens a web search for '+b.name:(b.note||'Visit '+b.name))+'">'+dot+esc(b.name)+(b.search?'<span class="srch">SEARCH</span>':'')+'</a>';
+      }).join('');
+      var notes=it.brands.filter(function(b){return b.note&&(!state.pure||b.status==='ok');}).map(function(b){return '<b>'+esc(b.name)+':</b> '+esc(b.note);});
+      var on=!!mine[it.n];
+      var nb=brands.length, isOpen=!!openSet[it.n]||autoOpen;
+      out.push('<article class="tag'+(on?' on':'')+(isOpen?' open':'')+'" data-n="'+it.n+'"><div class="tag-top"><button type="button" class="opener" aria-expanded="'+isOpen+'"><span class="aisle s-'+it.group+'">'+esc(it.aisle)+'</span><h3>'+esc(it.item)+'</h3><span class="sum">'+nb+(nb===1?' brand':' brands')+' <i>|</i> '+esc(it.price)+'</span><span class="chev" aria-hidden="true"></span></button><label class="mine" title="Add to my list"><input type="checkbox" data-n="'+it.n+'" aria-label="Add '+esc(it.item)+' to my list"'+(on?' checked':'')+'><span class="mtxt">My list</span><span class="plus" aria-hidden="true"></span></label></div><div class="body"><div class="chips">'+chips+'</div>'+(notes.length?'<p class="note warn">'+notes.join('<br>')+'</p>':'')+'<div class="meta"><span class="price">'+esc(it.price)+'</span><span class="wherebuy">'+whereHTML(it.where)+'</span></div></div></article>');
+    });
+    grid.innerHTML=out.length?out.join(''):'<div class="empty">'+(state.onlyMine?'Nothing on your list yet. Check "My list" on any item.':'No match. Try a simpler word, like "beans" or "soap".')+'</div>';
+    document.getElementById('count').textContent='Showing '+shown+' of '+D.items.length;
+  }
+  document.getElementById('grid').addEventListener('change',function(e){
+    var t=e.target; if(!t.dataset||!t.dataset.n) return;
+    if(t.checked) mine[t.dataset.n]=1; else delete mine[t.dataset.n];
+    store('bb-mine',JSON.stringify(mine));
+    t.closest('.tag').classList.toggle('on',t.checked);
+    updateMine();
+  });
+  document.getElementById('q').addEventListener('input',function(){state.q=this.value;render();});
+  document.getElementById('grid').addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('.opener'); if(!b||!isPhone()) return;
+    var card=b.closest('.tag'), n=card.dataset.n, open=!card.classList.contains('open');
+    card.classList.toggle('open',open); b.setAttribute('aria-expanded',open);
+    if(open) openSet[n]=1; else delete openSet[n];
+  });
+  /* phone: search, aisle picker and my list live in a bottom dock within thumb reach */
+  var mq=window.matchMedia('(max-width: 640px)');
+  function isPhone(){return mq.matches;}
+  var controls=document.querySelector('#list .controls'), row2=document.querySelector('#list .row2');
+  var qEl=document.getElementById('q'), pureLab=document.getElementById('pure').closest('label'), legend=row2.querySelector('.legend');
+  var sheet=document.getElementById('sheet'), scrim=document.getElementById('scrim'), sheetBody=document.getElementById('sheetBody');
+  function place(){
+    updateMineBtn();
+    if(isPhone()){
+      document.getElementById('dockQ').appendChild(qEl);
+      sheetBody.appendChild(tabs); sheetBody.appendChild(pureLab); sheetBody.appendChild(legend);
+      qEl.placeholder='Search grits, soap, coffee...';
+    }else{
+      controls.appendChild(qEl); controls.appendChild(pureLab);
+      controls.parentNode.insertBefore(tabs,row2); row2.insertBefore(legend,row2.firstChild);
+      qEl.placeholder='Search an item or brand, like grits, coffee or deodorant';
+      closeSheet();
+    }
+  }
+  function openSheet(){sheet.hidden=false;scrim.hidden=false;document.body.classList.add('locked');var cur=tabs.querySelector('[aria-pressed="true"]');if(cur)cur.focus();}
+  function closeSheet(){if(sheet.hidden)return;sheet.hidden=true;scrim.hidden=true;document.body.classList.remove('locked');}
+  function jumpToList(){var g=document.getElementById('count');var y=g.getBoundingClientRect().top+window.pageYOffset-70;if(Math.abs(window.pageYOffset-y)>40)window.scrollTo(0,y);}
+  document.getElementById('aisleBtn').addEventListener('click',openSheet);
+  document.getElementById('sheetDone').addEventListener('click',closeSheet);
+  scrim.addEventListener('click',closeSheet);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet();});
+  qEl.addEventListener('keydown',function(e){if(e.key==='Enter'){qEl.blur();jumpToList();}});
+  if(mq.addEventListener) mq.addEventListener('change',place); else if(mq.addListener) mq.addListener(place);
+  place();
+  document.getElementById('pure').addEventListener('change',function(){state.pure=this.checked;render();});
+  function updateMine(){var n=Object.keys(mine).length;document.getElementById('myCount').textContent=n+(n===1?' item':' items');updateMineBtn();}
+  function updateMineBtn(){var n=Object.keys(mine).length;document.getElementById('showMine').textContent=state.onlyMine?'Show everything':(isPhone()?'My list ('+n+')':'Show my list');}
+  document.getElementById('showMine').addEventListener('click',function(){state.onlyMine=!state.onlyMine;updateMineBtn();render();document.getElementById('list').scrollIntoView();});
+  document.getElementById('clearMine').addEventListener('click',function(){mine={};store('bb-mine','{}');updateMine();render();document.getElementById('copyBox').hidden=true;});
+  document.getElementById('copyMine').addEventListener('click',function(){
+    var lines=D.items.filter(function(it){return mine[it.n];}).map(function(it){
+      return '[ ] '+it.item+': '+it.brands.filter(function(b){return b.status==='ok';}).map(function(b){return b.name;}).join(' or ');
+    });
+    var text = lines.length ? 'My Black Basket list\n'+lines.join('\n') : 'My Black Basket list is empty. Check "My list" on a few items first.';
+    var box=document.getElementById('copyBox'), btn=this;
+    box.value=text; box.hidden=false;
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy my list';},1600);};
+    try{ navigator.clipboard.writeText(text).then(done,function(){box.select();btn.textContent='Select and copy';}); }catch(e){ box.select(); btn.textContent='Select and copy'; }
+  });
+  updateMine(); render();
+
+  /* ---------- heads up ---------- */
+  var seen={}, hs=[];
+  D.items.forEach(function(it){it.brands.forEach(function(b){ if(b.status!=='ok'&&!seen[b.name]){seen[b.name]=1;hs.push(b);} });});
+  var order={changed:0,not:1,verify:2};
+  hs.sort(function(a,b){return order[a.status]-order[b.status];});
+  var LAB={changed:'Black-founded, now corporate',not:'Not Black-owned',verify:'Double-check'};
+  document.getElementById('headsGrid').innerHTML=hs.map(function(b){
+    return '<div class="hcard '+b.status+'"><div class="lab">'+LAB[b.status]+'</div><h4>'+esc(b.name)+'</h4><p>'+esc(b.note)+'</p></div>';
+  }).join('');
+})();
+</script>
+
+</body></html>
